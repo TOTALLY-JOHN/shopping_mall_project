@@ -57,28 +57,38 @@
     <!-- FILL HERE! -->
     <form>
       <div class="username">
-         <input type="text" placeholder="Username" required>
+         <input type="text" placeholder="Username" minlength="4" pattern="^([a-z0-9_]){6,50}$" required>
       </div><br>
+
       <div class="userid">
-          <input type="text" placeholder="Usere ID" required>
+          <input type="text" placeholder="Usere ID" minlength="4" pattern="^([a-z0-9_]){6,50}$" required>
       </div><br>
+
       <div class="password">
-         <input type="password" placeholder="Password" minlength="8" required>
+         <input type="password" placeholder="Password" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" required>
       </div><br>
+
       <div class="confirmpassword">
-         <input type="password" placeholder="Confrim Password" id="pass2" minlength="8" required>
+         <input type="password" placeholder="Confrim Password" id="pass2" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" required>
       </div><br>
+
       <div class="useremail">
         <input type="email" placeholder="User Email" required>
       </div><br>
+
       <div class="useraddress">
         <input type="text" placeholder="User Address" required>
       </div><br>
+
       <div class="userphonenumber">
         <input type="tel" placeholder="User Phone Number" required>
       </div><br>
-      <label for="userconsentcheckbox">User Consent Checkbox</label>
+
       <input type="checkbox" required>
+      <label for="userconsentcheckbox">I have read and agree to the terms of service</label><br><br>
+      
+      <button type="submit" class="signupbtn">Sign Up</button>
+
     </form>
   </div>
 
