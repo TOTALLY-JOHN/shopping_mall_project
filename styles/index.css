@@ -11,4 +11,27 @@ a.best_item_main {
 
 #bannerContainer {
   background-color:darkslategrey;
+  position: relative;
+}
+#bodyContainer {
+  position: relative;
+}
+.signupdiv {
+  position: absolute;
+  left: 0;
+  width: auto;
+  height: auto;
+}
+.resimg {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.formdiv {
+  position: absolute;
+  right: 0;
+  margin: 30px;
+}
+.footerdiv {
+  position: relative;
 }

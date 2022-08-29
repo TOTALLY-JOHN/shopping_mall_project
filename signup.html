@@ -54,48 +54,56 @@
   </div><br>
 
   <div id="bodyContainer" class="container-fluid">
-    <!-- FILL HERE! -->
-    <form>
-      <div class="username">
-         <input type="text" id="uname" name="name" placeholder="Username" minlength="4" pattern="^([a-z0-9_]){6,50}$" required>
-      </div><br>
+      <!-- FILL HERE! -->
+        <div class="signupdiv">
+        <img class="resimg" src="https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?cs=srgb&dl=pexels-elle-hughes-1549200.jpg&fm=jpg" id="signup_background" alt="signupimg" > 
+        </div>
+        
+        <div class="formdiv">
+          <form>
+            <div class="username">
+              <input type="text" id="uname" name="name" placeholder="Username" minlength="4" pattern="^([a-z0-9_]){6,50}$" required>
+            </div><br>
 
-      <div class="userid">
-          <input type="text" id="uid" name="id" placeholder="Usere ID" minlength="4" pattern="^([a-z0-9_]){6,50}$" required>
-      </div><br>
+            <div class="userid">
+                <input type="text" id="uid" name="id" placeholder="Usere ID" minlength="4" pattern="^([a-z0-9_]){6,50}$" required>
+            </div><br>
 
-      <div class="password">
-         <input type="password" id="pass1" name="pass1" placeholder="Password" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" required>
-      </div><br>
+            <div class="password">
+              <input type="password" id="pass1" name="pass1" placeholder="Password" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" required>
+            </div><br>
 
-      <div class="confirmpassword">
-         <input type="password" id="pass2" name="pass2" placeholder="Confrim Password" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" required>
-      </div><br>
+            <div class="confirmpassword">
+              <input type="password" id="pass2" name="pass2" placeholder="Confrim Password" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" required>
+            </div><br>
 
-      <div class="useremail">
-        <input type="email" id="uemail" name="email" placeholder="User Email" required>
-      </div><br>
+            <div class="useremail">
+              <input type="email" id="uemail" name="email" placeholder="User Email" required>
+            </div><br>
 
-      <div class="useraddress">
-        <input type="text" id="uaddress" name="address" placeholder="User Address" required>
-      </div><br>
+            <div class="useraddress">
+              <input type="text" id="uaddress" name="address" placeholder="User Address" required>
+            </div><br>
 
-      <div class="userphonenumber">
-        <input type="tel" id="uphone#" name="phone#" placeholder="User Phone Number" required>
-      </div><br>
+            <div class="userphonenumber">
+              <input type="tel" id="uphone#" name="phone#" placeholder="User Phone Number" required>
+            </div><br>
 
-      <input type="checkbox" required>
-      <label for="userconsentcheckbox">I have read and agree to the terms of service</label><br><br>
-      
-      <button type="submit" class="signupbtn">Sign Up</button>
-
-    </form>
+            <input type="checkbox" id="checkbox" name="checkbox" required>
+            <label for="userconsentcheckbox">I have read and agree to the terms of service</label><br><br>
+            
+            <button type="submit" id="signup" name="signup" class="signupbtn">Sign Up</button>
+          </form>
+        </div> 
   </div>
 
-  <footer class="mx-auto mt-5 py-5 bg-dark text-white text-center">
+  <div class="footerdiv">
+    <footer class="mx-auto mt-5 py-5 bg-dark text-white text-center">
     TAG SHOPPING MALL made by Marcus Shim, Danbi Lee and Jihwan Jeong<br />
     Copyright &copy; 2022
-  </footer>
+    </footer>
+  </div>
+  
   <script>
     // FILL JAVASCRIPT OR jQUERY HERE!
   </script>
