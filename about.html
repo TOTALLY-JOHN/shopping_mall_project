@@ -12,22 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="styles/index.css?after">
-    <style>
-      #firstBox {
-        width: 70%;
-        height: 450px;
-        z-index: -3;
-        background-color:royalblue;
-        margin: 0px 0px 0px auto;
-      }
-      #secondImageBox {
-        width: 60%;
-        height: 350px;
-        z-index: -2;
-        margin: -400px auto 0px 0px;
-        position: absolute;
-      }
-    </style>
+    <link rel="stylesheet" href="styles/about.css?after">
   </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -65,31 +50,65 @@
     </div>
   </nav>
 
-  <div id="bannerContainer" class="container-fluid py-5 text-center text-white fs-4">
+  <!-- <div id="bannerContainer" class="container-fluid py-5 text-center text-white fs-4">
     ABOUT
-  </div>
+  </div> -->
 
   <div id="bodyContainer" class="container-fluid py-5 mt-5 text-center fs-5">
     <div id="firstBox">
     </div>
     <div id="secondImageBox">
       <img src="https://cdn.pixabay.com/photo/2019/04/03/18/11/woman-4100999_1280.jpg"
-        style="width: 50%; height: 350px;"/>
+        style="width: 70%; height: 550px;"/>
+    </div>
+    <div id="thirdBox">
+      <p class="fs-4" id="aboutUs">ABOUT US</p>
+      <h1>Fashion</h1>
+      <h1>Trends</h1>
+      <h1>2022</h1>
+    </div>
+
+    <div id="contentContainer" class="container-fluid">
+      <p>
+        The best trends, <br />
+        The best inspiration, <br />
+        The best shopping!
+      </p>
     </div>
       
-      
-      
-    <br />
+    <p class="fs-2 mt-5">Select Your Best</p>
     <div class="row">
-      <div class="col-6">
-
+      <div class="col-md-3 text-center py-5 fs-5">
+        <a href="view_item.html" class="best_item_main">
+          <img src="https://picsum.photos/id/513/300/300" style="width:90%;">
+          <br /><br />
+          Jacket
+        </a>
+      </div>
+      <div class="col-md-3 text-center py-5 fs-5">
+        <a href="view_item.html" class="best_item_main">
+          <img src="https://picsum.photos/id/821/300/300" style="width:90%;">
+          <br /><br />
+          Sweater
+        </a>
+      </div>
+      <div class="col-md-3 text-center py-5 fs-5">
+        <a href="view_item.html" class="best_item_main">
+          <img src="https://picsum.photos/id/535/300/300" style="width:90%;">
+          <br /><br />
+          T-Shirt
+        </a>
+      </div>
+      <div class="col-md-3 text-center py-5 fs-5">
+        <a href="view_item.html" class="best_item_main">
+          <img src="https://picsum.photos/id/103/300/300" style="width:90%;">
+          <br /><br />
+          Shoes
+        </a>
       </div>
     </div>
-    ABOUT
-    https://nicepage.com/html-templates/preview/get-the-hottest-styles-243942?device=desktop 여기 참고
-    <br /><br />
-    Welcome to Tag Shopping Mall!
   </div>
+
 
   <footer class="mx-auto mt-5 py-5 bg-dark text-white text-center">
     TAG SHOPPING MALL made by Marcus Shim, Danbi Lee and Jihwan Jeong<br />
