@@ -1,0 +1,47 @@
+/* 
+a.best_item_main {
+    text-decoration: none;
+    color: black;
+  }
+  
+  #bannerContainer {
+    background-color:darkslategrey;
+    position: relative;
+  }
+  #bodyContainer {
+    position: relative;
+  }
+  .signupdiv {
+    position: absolute;
+    left: 0;
+    width: auto;
+    height: auto;
+  }
+  .resimg {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .formdiv {
+    position: absolute;
+    right: 0;
+    margin: 30px;
+  }
+  .footerdiv {
+    position: relative;
+  } */
+
+.signUpDiv {
+    width: 100%;
+    height: 800px;
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-image: url("https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?cs=srgb&dl=pexels-elle-hughes-1549200.jpg&fm=jpg");
+}
+
+.formDiv {
+    width: 30%;
+    margin: 0px 0px 0px auto;
+    padding-top: 35px;
+    padding-right: 35px;
+}

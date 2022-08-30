@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="styles/index.css?after">
+    <link rel="stylesheet" href="styles/signup.css?after">
   </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -55,46 +56,47 @@
 
   <div id="bodyContainer" class="container-fluid">
       <!-- FILL HERE! -->
-        <div class="signupdiv">
-        <img class="resimg" src="https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?cs=srgb&dl=pexels-elle-hughes-1549200.jpg&fm=jpg" id="signup_background" alt="signupimg" > 
+        <div class="signUpDiv">
+          <div class="formDiv">
+            <form>
+              <div class="username">
+                <input type="text" id="uname" name="name" placeholder="Username" minlength="4" pattern="^([a-z0-9_]){6,50}$" class="form-control" required>
+              </div><br>
+  
+              <div class="userid">
+                  <input type="text" id="uid" name="id" placeholder="Usere ID" minlength="4" pattern="^([a-z0-9_]){6,50}$" class="form-control" required>
+              </div><br>
+  
+              <div class="password">
+                <input type="password" id="pass1" name="pass1" placeholder="Password" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" class="form-control" required>
+              </div><br>
+  
+              <div class="confirmpassword">
+                <input type="password" id="pass2" name="pass2" placeholder="Confrim Password" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" class="form-control" required>
+              </div><br>
+  
+              <div class="useremail">
+                <input type="email" id="uemail" name="email" placeholder="User Email" class="form-control" required>
+              </div><br>
+  
+              <div class="useraddress">
+                <input type="text" id="uaddress" name="address" placeholder="User Address" class="form-control" required>
+              </div><br>
+  
+              <div class="userphonenumber">
+                <input type="tel" id="uphone#" name="phone#" placeholder="User Phone Number" class="form-control" required>
+              </div><br>
+  
+              <input type="checkbox" id="checkbox" name="checkbox"  required>
+              <label for="userconsentcheckbox">I have read and agree to the terms of service</label><br><br>
+              
+              <button type="submit" id="signup" name="signup" class="btn btn-primary">Sign Up</button>
+            </form>
+          </div> 
+        <!-- <img class="resimg" src="https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?cs=srgb&dl=pexels-elle-hughes-1549200.jpg&fm=jpg" id="signup_background" alt="signupimg" >  -->
         </div>
         
-        <div class="formdiv">
-          <form>
-            <div class="username">
-              <input type="text" id="uname" name="name" placeholder="Username" minlength="4" pattern="^([a-z0-9_]){6,50}$" required>
-            </div><br>
-
-            <div class="userid">
-                <input type="text" id="uid" name="id" placeholder="Usere ID" minlength="4" pattern="^([a-z0-9_]){6,50}$" required>
-            </div><br>
-
-            <div class="password">
-              <input type="password" id="pass1" name="pass1" placeholder="Password" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" required>
-            </div><br>
-
-            <div class="confirmpassword">
-              <input type="password" id="pass2" name="pass2" placeholder="Confrim Password" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" required>
-            </div><br>
-
-            <div class="useremail">
-              <input type="email" id="uemail" name="email" placeholder="User Email" required>
-            </div><br>
-
-            <div class="useraddress">
-              <input type="text" id="uaddress" name="address" placeholder="User Address" required>
-            </div><br>
-
-            <div class="userphonenumber">
-              <input type="tel" id="uphone#" name="phone#" placeholder="User Phone Number" required>
-            </div><br>
-
-            <input type="checkbox" id="checkbox" name="checkbox" required>
-            <label for="userconsentcheckbox">I have read and agree to the terms of service</label><br><br>
-            
-            <button type="submit" id="signup" name="signup" class="signupbtn">Sign Up</button>
-          </form>
-        </div> 
+        
   </div>
 
   <div class="footerdiv">
@@ -106,6 +108,12 @@
   
   <script>
     // FILL JAVASCRIPT OR jQUERY HERE!
+    function passwordMatch() {
+      let password = document.querySelector("#pass1").value;
+      let passwordConfirmed = document.getElementById("pass2").value;
+
+      // onchange or onkeyup
+    }
   </script>
 </body>
 </html>
