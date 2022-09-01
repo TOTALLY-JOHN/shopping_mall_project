@@ -100,6 +100,16 @@
                 <input type="tel" id="uphone#" name="phone#" placeholder="User Phone Number" class="form-control" required>
               </div><br>
   
+                <!-- Find Phone# -->
+                <!-- https://www.twilio.com/blog/international-phone-number-input-html-javascript -->
+                <div class="container">
+                  <form id="login" onsubmit="process(event)">
+                    <p>Enter your phone number:</p>
+                    <input id="phone" type="tel" name="phone" />
+                    <input type="submit" class="btn" value="Verify" />
+                  </form>
+                </div><br>
+
               <input type="checkbox" id="checkbox" name="checkbox"  required>
               <label for="userconsentcheckbox">I have read and agree to the terms of service</label><br><br>
               
@@ -138,6 +148,13 @@
           }
         }).open();
       } */
+
+      /* Find Phone# */
+      /* const phoneInputField = document.querySelector("#phone");
+      const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript:
+          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+      }); */
 
   </script>
 </body>
