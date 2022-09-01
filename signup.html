@@ -82,7 +82,20 @@
               <div class="useraddress">
                 <input type="text" id="uaddress" name="address" placeholder="User Address" class="form-control" required>
               </div><br>
-  
+
+                <!-- Find Address -->
+                <!-- http://postcode.map.daum.net/guide -->
+                
+                <input type="text" placeholder="Zip Code" name="zip" style="width:80px; height:26px;" />
+                
+                <button type="button" style="width:60px; height:32px;" onclick="openZipSearch()">Search</button><br>
+                
+                <input type="text" placeholder="Address" name="addr1" style="width:300px; height:30px;" readonly />
+                <br>
+                
+                <input type="text" placeholder="Details" name="addr2" style="width:300px; height:30px;" />
+                <br><br>
+
               <div class="userphonenumber">
                 <input type="tel" id="uphone#" name="phone#" placeholder="User Phone Number" class="form-control" required>
               </div><br>
@@ -115,6 +128,17 @@
       // onchange or onkeyup
     } */
   
+      /* Find Address */
+      /* function openZipSearch() {
+        new daum.Postcode({
+          oncomplete: function(data) {
+            $('[name=zip]').val(data.zonecode); // 우편번호 (5자리)
+            $('[name=addr1]').val(data.address);
+            $('[name=addr2]').val(data.buildingName);
+          }
+        }).open();
+      } */
+
   </script>
 </body>
 </html>
