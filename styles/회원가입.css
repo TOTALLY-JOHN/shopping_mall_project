@@ -1,0 +1,45 @@
+body {
+    font-family: "Noto Sans", "Noto Sans CJK KR", sans-serif;
+    max-width: 1500px;
+    margin: 0px auto 0px auto;
+    
+  }
+  
+  a.best_item_main {
+    text-decoration: none;
+    color: black;
+  }
+  
+  #bannerContainer {
+    background-color:darkslategrey;
+  }
+
+  #bodyContainer {
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .formDiv {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(38, 158, 152);
+    border-radius: 1rem;
+    width: 100%;
+    margin: 0px 0px 0px auto;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+  
+  #signup {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    font-size: medium;
+    font-weight: 400;
+  }
