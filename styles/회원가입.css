@@ -39,8 +39,31 @@ body {
 
   .form_group {
     width: auto;
+    text-align: center;
   }
   
+  #uid {
+    width: 80%;
+    display: inline-block;
+  }
+
+  .id_overlap_button {
+    display: inline-block;
+  }
+
+  .address_group {
+    text-align: left;
+  }
+
+  #sample3_postcode {
+    width: 50%;
+    display: inline-block;
+  }
+
+  .ads_overlap_button {
+    display: inline-block;
+  }
+
   #signup {
     width: 50%;
     box-sizing: border-box;
@@ -56,3 +79,5 @@ body {
     margin-top: 91px;
     margin-bottom: 5px;
   }
+
+  
