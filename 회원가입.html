@@ -58,25 +58,28 @@
         <!-- FILL HERE! -->
         
             <div class="formDiv mx auto">
-                <form >
+                <form method="post" autocomplete="off">
                     <h2 class="formTitle"><b>
                       Create Account
                     </h2><br>
 
                     <Div class="form_group">
-                    <input type="text" id="uname" name="name" placeholder="User Name" minlength="4" pattern="^([a-z0-9_]){6,50}$" class="form-control" required><br>
+                    <input type="text" id="uname" name="name" placeholder="User Name" minlength="4" class="form-control" required><br>
                     </Div>
 
                     <div class="form_group">
-                    <input type="text" id="uid" name="userid" placeholder="User ID" minlength="4" pattern="^([a-z0-9_]){6,50}$" class="form-control" required><br>
+                    <input type="text" id="uid" name="userid" check_result="fail" placeholder="User ID" minlength="4" pattern="^([a-z0-9_]){6,50}$" class="form-control" required>
+                    <button type="button" class="id_overlap_button" onclick="id_overlap_check()">Verify</button>
+                    <img id="id_check_sucess" style="display: none;">
+                    <br>
                     </div>
 
                     <div class="form_group">
-                    <input type="password" id="pass1" name="pass1" placeholder="Password" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" class="form-control" required><br>
+                    <input type="password" id="pass1" onchange="check_pw()" name="pass1" value="" placeholder="Password" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" class="form-control" required><br>
                     </div>
 
                     <div class="form_group">
-                    <input type="password" id="pass2" name="pass2" placeholder="Confrim Password" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" class="form-control" required><br>
+                    <input type="password" id="pass2" onchange="check_pw()" name="pass2" placeholder="Confrim Password" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" class="form-control" required>&nbsp;<span id="check"></span>
                     </div>
                     
                     <div class="form_group">
@@ -122,8 +125,80 @@
         </div>
 
         <script>
-            // FILL JAVASCRIPT OR jQUERY HERE!
-            
+          // FILL JAVASCRIPT OR jQUERY HERE!
+          
+          /* Verify User ID */
+          function id_overlap_check() {
+
+            $('#uid').change(function () {
+              $('#id_check_sucess').hide();
+              $('.id_overlap_button').show();
+              $('#uid').attr("check_result", "fail");
+            })
+
+            if ($('#uid').attr("check_result") == "fail"){
+            alert("Please verify User ID.");
+            $('#uid').focus();
+            return false;
+            }
+
+            id_overlap_input = document.querySelector('input[name="username"]');
+
+            $.ajax({
+              url: "{% url 'lawyerAccount:id_overlap_check' %}",
+              data: {
+              'username': id_overlap_input.value
+              },
+              datatype: 'json',
+              success: function (data) {
+                console.log(data['overlap']);
+                if (data['overlap'] == "fail") {
+                  alert("The User ID already exists.");
+                  id_overlap_input.focus();
+                  return;
+                } else {
+                  alert("The User ID is available.");
+                  $('#uid').attr("check_result", "success");
+                  $('#id_check_sucess').show();
+                  $('.id_overlap_button').hide();
+                  return;
+                }
+              }
+            });
+          }
+
+
+          /* Password & Confirm Password JS */
+          function check_pw(){
+            var pw = document.getElementById('pass1').value;
+            var SC = ["!","@","#","$","%"];
+            var check_SC = 0;
+ 
+            if(pw.length < 6 || pw.length>16){
+                window.alert('Password must be 6 - 16 characters and contain special characters.');
+                document.getElementById('pass1').value='';
+            }
+            for(var i=0;i<SC.length;i++){
+                if(pw.indexOf(SC[i]) != -1){
+                    check_SC = 1;
+                }
+            }
+            if(check_SC == 0){
+                window.alert('Please include special characters (!,@,#,$,%).')
+                document.getElementById('pass1').value='';
+            }
+            if(document.getElementById('pass1').value !='' && document.getElementById('pass2').value!=''){
+                if(document.getElementById('pass1').value==document.getElementById('pass2').value){
+                    document.getElementById('check').innerHTML='Password is matching.'
+                    document.getElementById('check').style.color='blue';
+                }
+                else{
+                    document.getElementById('check').innerHTML='Password is not matching.';
+                    document.getElementById('check').style.color='red';
+                }
+            }
+        }
+
         </script>
 
 </body>

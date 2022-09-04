@@ -15,12 +15,13 @@ body {
   }
 
   #bodyContainer {
-    background-color: lightseagreen;
+    /* background-color: lightseagreen; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 20px;
     position: relative;
+    
   }
 
   .formDiv {
@@ -32,11 +33,8 @@ body {
     border-radius: 1rem;
     border-color: black;
     width: 50%;
-    margin: 0px 0px 0px auto;
-    padding-top: 30px;
-    padding-right: 30px;
-    padding-bottom: 30px;
-    padding-left: 30px;
+    margin: 0px auto;
+    padding: 30px;
   }
 
   .form_group {
