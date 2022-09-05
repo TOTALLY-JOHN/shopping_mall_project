@@ -1,78 +1,83 @@
-#bodyContainer {
-  /* background-color: tomato; */
-  padding: 20px;
-  max-width: 1000px;
-}
+body {
+    font-family: "Noto Sans", "Noto Sans CJK KR", sans-serif;
+    max-width: 1500px;
+    margin: 0px auto 0px auto;
+    
+  }
+  
+  a.best_item_main {
+    text-decoration: none;
+    color: black;
+  }
+  
+  #bannerContainer {
+    background-color:darkslategrey;
+  }
 
-.signUpDiv {
-  width: 100%;
-  height: 1000px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-color: brown;
-  /* background-image: url("https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?cs=srgb&dl=pexels-elle-hughes-1549200.jpg&fm=jpg"); */
-}
+  #bodyContainer {
+    /* background-color: lightseagreen; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    
+  }
 
-.formDiv {
-  border-radius: 1rem;
-  background-color: lightblue;
-  width: 50%;
-  margin: 0px 0px 0px auto;
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-}
+  .formDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    border-color: black;
+    width: 50%;
+    margin: 0px auto;
+    padding: 30px;
+  }
 
-.container {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-}
+  .form_group {
+    width: auto;
+    text-align: center;
+  }
+  
+  #uid {
+    width: 80%;
+    display: inline-block;
+  }
 
-#phone, .btn {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+  .id_overlap_button {
+    display: inline-block;
+  }
 
-.btn {
-  color: #ffffff;
-  background-color: #428BCA;
-  border-color: #357EBD;
-  font-size: 14px;
-  outline: none;
-  cursor: pointer;
-  padding-left: 12px;
-  padding-right: 12px;
-}
+  .address_group {
+    text-align: left;
+  }
 
-.btn:focus, .btn:hover {
-  background-color: #3276B1;
-  border-color: #285E8E;
-}
+  #sample3_postcode {
+    width: 50%;
+    display: inline-block;
+  }
 
-.btn:active {
-  box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
-}
+  .ads_overlap_button {
+    display: inline-block;
+  }
 
-.alert {
-  padding: 15px;
-  margin-top: 10px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
+  #signup {
+    width: 50%;
+    box-sizing: border-box;
+    background-color: white;
+    font-size: medium;
+    font-weight: 400;
+  }
 
-.alert-info {
-  border-color: #bce8f1;
-  color: #31708f;
-  background-color: #d9edf7;
-}
+  .loginhere {
+    color: #555;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 91px;
+    margin-bottom: 5px;
+  }
 
-.alert-error {
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
-}
+  
