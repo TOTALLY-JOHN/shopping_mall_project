@@ -1,0 +1,21 @@
+#bodyContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+#search-bar {
+    background-color: antiquewhite;
+    padding: 20px;
+
+}
+
+#filter-sort {
+    
+}
+
+#main-content {
+
+}
