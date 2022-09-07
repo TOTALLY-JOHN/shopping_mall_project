@@ -15,135 +15,119 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="styles/index.css?after">
+    <link rel="stylesheet" href="styles/search_result.css">
   </head>
 <body>
-
-<div class="container">
-    <div class="row">
-        <h2>Ecommerce Products Display Layout</h2>
-        <p>
-            This snippent uses <a href="http://daneden.github.io/animate.css/" target="_blank">Animate.css</a> for the animation of the buttons.
-        </p>
-        <div class="col-sm-3">
-            <article class="col-item">
-                <div class="photo">
-                    <div class="options-cart-round">
-                        <button class="btn btn-default" title="Add to cart">
-                            <span class="fa fa-shopping-cart"></span>
-                        </button>
-                    </div>
-                    <a href="#"> <img src="https://unsplash.it/500/300?image=0" class="img-responsive" alt="Product Image" /> </a>
-                </div>
-                <div class="info">
-                    <div class="row">
-                        <div class="price-details col-md-6">
-                            <p class="details">
-                                Lorem ipsum dolor sit amet, consectetur..
-                            </p>
-                            <h1>Sample Product</h1>
-                            <span class="price-new">$110.00</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <p class="text-center">Hover over image</p>
-        </div>
-        <div class="col-sm-3">
-            <article class="col-item">
-                <div class="photo">
-                    <div class="options">
-                        <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Add to wish list">
-                            <i class="fa fa-heart"></i>
-                        </button>
-                        <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Compare">
-                            <i class="fa fa-exchange"></i>
-                        </button>
-                    </div>
-                    <div class="options-cart">
-                        <button class="btn btn-default" title="Add to cart">
-                            <span class="fa fa-shopping-cart"></span>
-                        </button>
-                    </div>
-                    <a href="#"> <img src="https://unsplash.it/500/300?image=0" class="img-responsive" alt="Product Image" /> </a>
-                </div>
-                <div class="info">
-                    <div class="row">
-                        <div class="price-details col-md-6">
-                            <p class="details">
-                                Lorem ipsum dolor sit amet, consectetur..
-                            </p>
-                            <h1>Sample Product</h1>
-                            <span class="price-new">$110.00</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <p class="text-center">Hover over image</p>
-        </div>
-        <div class="col-sm-3">
-            <article class="col-item">
-                <div class="options">
-                    <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Add to wish list">
-                        <i class="fa fa-heart"></i>
-                    </button>
-                    <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Compare">
-                        <i class="fa fa-exchange"></i>
-                    </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://unsplash.it/500/300?image=0" class="img-responsive" alt="Product Image" /> </a>
-                </div>
-                <div class="info">
-                    <div class="row">
-                        <div class="price-details col-md-6">
-                            <p class="details">
-                                Lorem ipsum dolor sit amet, consectetur..
-                            </p>
-                            <h1>Sample Product</h1>
-                            <span class="price-new">$110.00</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </div>
-        <div class="col-sm-3">
-            <article class="col-item">
-                <div class="photo">
-                    <a href="#"> <img src="https://unsplash.it/500/300?image=0" class="img-responsive" alt="Product Image" /> </a>
-                </div>
-                <div class="info">
-                    <div class="row">
-                        <div class="price-details col-md-6">
-                            <p class="details">
-                                Lorem ipsum dolor sit amet, consectetur..
-                            </p>
-                            <h1>Sample Product</h1>
-                            <span class="price-new">$110.00</span>
-                        </div>
-                    </div>
-                    <div class="separator clear-left">
-                        <p class="btn-add">
-                            <i class="fa fa-shopping-cart"></i><a href="#" class="hidden-sm">Add to cart</a>
-                        </p>
-                        <p class="btn-details">
-                            <a href="#" class="hidden-sm" data-toggle="tooltip" data-placement="top" title="Add to wish list"><i class="fa fa-heart"></i></a>
-                            <a href="#" class="hidden-sm" data-toggle="tooltip" data-placement="top" title="Compare"><i class="fa fa-exchange"></i></a>
-                        </p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </article>
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+        <a class="navbar-brand fs-4" href="#">Tag Shopping Mall</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+            <a class="nav-link fs-5 px-3" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link fs-5 px-3" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link fs-5 px-3" href="item_list.html">Shop</a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link fs-5 px-3" href="cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link fs-5 px-3" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link fs-5 px-3" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link fs-5 px-3" href="signup.html">Signup</a>
+            </li>
+        </ul>
         </div>
     </div>
+    </nav>
+    <div id="bannerContainer" class="container-fluid py-5 text-center text-white fs-4">
+        SEARCH RESULT
+    </div>
+
+<!-- Search Box --> 
+<div class="input-group">
+    <input type="search" class="form-control rounded" placeholder="Please Search Any Items!" aria-label="Search" aria-describedby="search-addon" />
+    <button type="button" class="btn btn-outline-primary">search</button>
 </div>
+            
+<div id="bodyContainer" class="container-fluid mt-5">
+<!-- FILL HERE! -->    
+    <div class="container">
+        <div class="row">
+            <h2>2 Items Found!</h2>
+            <div class="col-sm-3">
+                <article class="col-item">
+                    <div class="photo">
+                        <a href="#"> <img src="images/main_image1.jpg" onclick="ItemMessage()" class="img-responsive" alt="Product Image" /> </a>
+                    </div>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Out of Stock Now!
+                                </p>
+                                <h1>Sample Product1</h1>
+                                <span class="price-new">$110.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <p class="text-center">Hover over image</p>
+            </div>
+            <div class="col-sm-3">
+                <article class="col-item">
+                    <div class="photo">   
+                        <a href="#"> <img src="images/main_image2.jpg" onclick="ItemMessage()" class="img-responsive" alt="Product Image" /> </a>
+                    </div>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Out of Stock Now!
+                                </p>
+                                <h1>Sample Product2</h1>
+                                <span class="price-new">$80.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <p class="text-center">Hover over image</p>
+            </div>           
+        </div>
+    </div>
+</div> 
+
+<nav aria-label="Page navigation example" class="page-nav">
+    <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+</nav>
 
 <footer class="mx-auto mt-5 py-5 bg-dark text-white text-center">
     TAG SHOPPING MALL made by Marcus Shim, Danbi Lee and Jihwan Jeong<br />
     Copyright &copy; 2022
   </footer>
   <script>
-    // FILL JAVASCRIPT OR jQUERY HERE!
-   
+     function ItemMessage() {
+       window.alert('Out Of Stock Now!') 
+
+    }
   </script>
 </body>
 </html>
