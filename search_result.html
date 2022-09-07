@@ -15,7 +15,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="styles/index.css?after">
-    <link rel="stylesheet" href="styles/search_result.css">
+    <link rel="stylesheet" href="styles/search_result.css?after">
   </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -57,17 +57,21 @@
     </div>
 
 <!-- Search Box --> 
-<div class="input-group">
-    <input type="search" class="form-control rounded" placeholder="Please Search Any Items!" aria-label="Search" aria-describedby="search-addon" />
+<div id="search-box" class="input-group">
+    <input id="myInput" type="search" class="form-control rounded" placeholder="Please Search Any Items!" 
+    aria-label="Search" aria-describedby="search-addon" onkeydown="textSearch()"/>
     <button type="button" class="btn btn-outline-primary">search</button>
 </div>
             
 <div id="bodyContainer" class="container-fluid mt-5">
-<!-- FILL HERE! -->    
+<!-- FILL HERE! -->
+    
     <div class="container">
-        <div class="row">
+        <div>
             <h2>2 Items Found!</h2>
-            <div class="col-sm-3">
+        </div>   
+        <ul id="myUL" class="list-group list-group-horizontal">
+            <li><div class="list-group-item">
                 <article class="col-item">
                     <div class="photo">
                         <a href="#"> <img src="images/main_image1.jpg" onclick="ItemMessage()" class="img-responsive" alt="Product Image" /> </a>
@@ -78,14 +82,14 @@
                                 <p class="details">
                                     Out of Stock Now!
                                 </p>
-                                <h1>Sample Product1</h1>
+                                <h1>Cheap Clothes</h1>
                                 <span class="price-new">$110.00</span>
                             </div>
                         </div>
                     </div>
                 </article>
-            </div>
-            <div class="col-sm-3">
+            </div></li>
+            <li><div class="list-group-item">
                 <article class="col-item">
                     <div class="photo">   
                         <a href="#"> <img src="images/main_image2.jpg" onclick="ItemMessage()" class="img-responsive" alt="Product Image" /> </a>
@@ -96,15 +100,14 @@
                                 <p class="details">
                                     Out of Stock Now!
                                 </p>
-                                <h1>Sample Product2</h1>
+                                <h1>Men's Suit</h1>
                                 <span class="price-new">$80.00</span>
                             </div>
                         </div>
                     </div>
                 </article>
-            </div>           
-        </div>
-    </div>
+            </div></li>
+        </ul>           
 </div> 
 
 <nav aria-label="Page navigation example" class="page-nav">
@@ -126,6 +129,24 @@
        window.alert('Out Of Stock Now!') 
 
     }
+
+ function textSearch() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
+
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("article")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+        } else {
+        li[i].style.display = "none";
+        }
+    }
+  }
   </script>
 </body>
 </html>
