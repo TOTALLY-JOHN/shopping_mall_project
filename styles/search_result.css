@@ -129,3 +129,11 @@
 .col-item .btn-details a:first-child {
   margin-right:12px;
 }
+
+.page-nav {
+   margin-left: 50%;
+}
+
+.search-box {
+  margin: auto;
+}
