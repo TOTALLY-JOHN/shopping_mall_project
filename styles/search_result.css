@@ -6,7 +6,7 @@
 .col-item {
   border: 1px solid #E1E1E1;
   background: #FFF;
-  margin-bottom:12px;
+  margin:12px;
 }
 .col-item .options {
   position:absolute;
@@ -108,27 +108,6 @@
 .col-item .separator p i {
   margin-right: 5px;
 }
-.col-item .btn-add {
-  width: 60%;
-  float: left;
-}
-.col-item .btn-add a {
-  display:inline-block !important;
-}
-.col-item .btn-add {
-  border-right: 1px solid #E1E1E1;
-}
-.col-item .btn-details {
-  width: 40%;
-  float: left;
-  padding-left: 10px;
-}
-.col-item .btn-details a {
-  display:inline-block !important;
-}
-.col-item .btn-details a:first-child {
-  margin-right:12px;
-}
 
 .page-nav {
    margin-left: 50%;
@@ -136,4 +115,24 @@
 
 .search-box {
   margin: auto;
+}
+
+#search-box {
+  width: 30%; 
+  margin: 20px 20px auto auto;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+#myUL div li {
+  display: inline;
+}
+
+.list-group-item {
+  border: none;
 }
