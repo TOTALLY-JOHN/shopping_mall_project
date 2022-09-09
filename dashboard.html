@@ -74,6 +74,13 @@
       </li>
   </ul>
   <div class="tab-content">
+      <!--
+        
+        ? 상점 관리
+      
+        TODO: 상점 관리 업데이트
+
+      -->
       <div class="tab-pane fade show active" id="manage_shop">
         <div class="mt-5">
           <h1 class="text-center">상점 관리</h1>
@@ -126,6 +133,13 @@
           </table>
         </div>
       </div>
+      <!--
+        
+        ? 상품 관리
+      
+        TODO: 상품 관리 업데이트
+
+      -->
       <div class="tab-pane fade" id="manage_items">
         <div class="mt-5">
           <h1 class="text-center">상품 관리</h1>
@@ -199,19 +213,140 @@
           </table>
         </div>
       </div>
+      <!--
+        
+        ? 주문 관리
+      
+        TODO: 주문 관리 업데이트
+
+      -->
       <div class="tab-pane fade" id="manage_orders">
           <div class="mt-5">
             <h1 class="text-center">주문 관리</h1>
+            <table class="table table-striped mt-5">
+              <thead>
+                <tr>
+                  <th>주문번호</th>
+                  <th>주문상품정보</th>
+                  <th>주문고객</th>
+                  <th>작업</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>20220909-12234567012932</td>
+                  <td>
+                    <img src="https://picsum.photos/id/1/300/300" style="width:100px;">
+                    &nbsp;
+                    상품1
+                  </td>
+                  <td>test123(홍길동)</td>
+                  <td>
+                    <button class="btn btn-primary">상태 수정</button>
+                    <button class="btn btn-success">환불/반품</button>
+                    <button class="btn btn-danger">삭제</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>20220909-1223238582337</td>
+                  <td>
+                    <img src="https://picsum.photos/id/32/300/300" style="width:100px;">
+                    &nbsp;
+                    상품2
+                  </td>
+                  <td>test124(김성택)</td>
+                  <td>
+                    <button class="btn btn-primary">상태 수정</button>
+                    <button class="btn btn-success">환불/반품</button>
+                    <button class="btn btn-danger">삭제</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>20220909-1223238586582</td>
+                  <td>
+                    <img src="https://picsum.photos/id/63/300/300" style="width:100px;">
+                    &nbsp;
+                    상품3
+                  </td>
+                  <td>test125(이명석)</td>
+                  <td>
+                    <button class="btn btn-primary">상태 수정</button>
+                    <button class="btn btn-success">환불/반품</button>
+                    <button class="btn btn-danger">삭제</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
       </div>
+      <!--
+        
+        ? 고객 관리
+      
+        TODO: 고객 관리 업데이트
+
+      -->
       <div class="tab-pane fade" id="manage_customers">
           <div class="mt-5">
             <h1 class="text-center">고객 관리</h1>
+            <table class="table table-striped mt-5">
+              <thead>
+                <tr>
+                  <th>고객식별번호</th>
+                  <th>아이디</th>
+                  <th>이메일</th>
+                  <th>이름</th>
+                  <th>잠금상태</th>
+                  <th>작업</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>test123</td>
+                  <td>test123@gmail.com</td>
+                  <td>홍길동</td>
+                  <td>활성</td>
+                  <td>
+                    <button class="btn btn-success">수정</button>
+                    <button class="btn btn-danger">삭제</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>test124</td>
+                  <td>test124@gmail.com</td>
+                  <td>김성택</td>
+                  <td>활성</td>
+                  <td>
+                    <button class="btn btn-success">수정</button>
+                    <button class="btn btn-danger">삭제</button>
+                  </td>
+                </tr>
+                <td>3</td>
+                  <td>test125</td>
+                  <td>test125@gmail.com</td>
+                  <td>이명석</td>
+                  <td>활성</td>
+                  <td>
+                    <button class="btn btn-success">수정</button>
+                    <button class="btn btn-danger">삭제</button>
+                  </td>
+              </tbody>
+            </table>
           </div>
       </div>
+      <!--
+        
+        ? 게시판 관리
+      
+        TODO: 게시판 관리 업데이트
+
+      -->
       <div class="tab-pane fade" id="manage_bbs">
           <div class="mt-5">
             <h1 class="text-center">게시판 관리</h1>
+            
           </div>
       </div>
   </div>
