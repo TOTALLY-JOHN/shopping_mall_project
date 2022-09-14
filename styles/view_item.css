@@ -1,0 +1,123 @@
+
+#bodyContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+#search-bar {
+    background-color: antiquewhite;
+    padding: 20px;
+    display: block;
+}
+
+#filter-sort {
+    background-color: whitesmoke;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+
+    a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+
+    }
+
+#item-mapping {
+    background-color: lightblue;
+    position: relative;
+    width: auto;
+    padding: 10px;
+}
+
+.item-mapping-order {
+    background-color: lightpink;
+    display: block;
+    width: auto;
+    margin: 10px;
+}
+
+#item-group {
+    background-color: whitesmoke;
+    position: relative;
+    display: flex;
+    padding: 10px;
+}
+
+    #item-image {
+        width: 50%;
+    }
+    #item-info {
+        background-color: lightsalmon;
+        width: 50%;
+        padding: 10px;
+        position: relative;
+    }
+        #item-description {
+            background-color: whitesmoke;
+            padding: 10px;
+        }
+
+        #item-option {
+            background-color: whitesmoke;
+            padding: 10px;
+        }
+
+            #option-color {
+                background-color: mediumspringgreen;
+                display: flex;
+                padding: 5px;
+                justify-content: space-between;
+            }
+                #item-option-color-group {
+                    border-style: ridge;
+                }
+
+            #option-size {
+                background-color: mediumturquoise;
+                display: flex;
+                padding: 5px;
+                justify-content: space-between;
+            }
+                #item-option-size-group {
+                    border-style: ridge;
+                }
+
+            #option-quantity {
+                background-color: mediumpurple;
+                padding: 5px;
+            }
+        
+        #item-shopping {
+            background-color: whitesmoke;
+            padding: 10px;
+            text-align: center;
+        }
+            .addtocart {
+                background-color: lightseagreen;
+                padding: 5px;
+                border-style: groove;
+                width: auto;
+            }   
+            
+            .item-shopping-sub {
+                display: flex;
+            }
+                .addtowishlist {
+                    background-color: lightskyblue;
+                    padding: 5px;
+                    border-style: groove;
+                    width: 50%;
+                }
+                .findstockinstore {
+                    background-color: lightslategray;
+                    padding: 5px;
+                    border-style: groove;
+                    width: 50%;
+                }

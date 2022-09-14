@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="styles/index.css?after">
+    <link rel="stylesheet" href="styles/view_item.css?after">
   </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -55,6 +56,129 @@
 
   <div id="bodyContainer" class="container-fluid">
     <!-- FILL HERE! -->
+    
+    <!-- SEARCH! -->
+    <section id="search">
+      <div id="search-bar">
+        <form>
+          <input />
+          <button>Go</button>
+        </form>
+      </div><br>
+    </section>
+
+    <!-- ITEM GATEGORY! -->
+    <section id="filter">
+      <div id="filter-sort">
+        <div class="man">
+          <a href="#">MAN</a>
+        </div><br>
+        
+        <div class="woman">
+          <a href="#">WOMAN</a>
+        </div><br>
+          
+        <div class="kid">
+          <a href="#">KID</a>
+        </div><br>
+
+        <div class="accessory"> 
+          <a href="#">ACCESSORY</a>
+        </div>
+
+      </div>
+    </section><br>
+
+    <!--VIEW ITEM-->
+    <section id="item">
+      <div id="item-mapping">
+        <!-- Sample
+        https://www.uniqlo.com/my/en/products/E445173-000?colorCode=COL12&sizeCode=SMA003 -->
+        <ol class="item-mapping-order">
+          <li>
+            <a href="#">TSM</a>
+          </li> 
+          <li>
+            <a href="#">Man</a>
+          </li> 
+          <li>
+            <a href="#">Shirts</a>
+          </li>
+        </ol>
+      </div><br>
+
+      <div id="item-group">
+        <div id="item-image">
+          <img src="images/item-image-1.jpg" alt="">
+        </div>
+
+        <div id="item-info">
+          <div id="item-description">
+            <h4>
+              <span>Normal Shirt</span><br>
+              <span>RM 39.90</span><br>
+              <span>Default Man's Shirt</span><br><br>
+              <span>Designed for casual outfit</span>
+            </h4>
+          </div><br>
+
+          <div id="item-option">
+            <div id="option-color">
+              <span>COLOR</span><br>
+              <div id="item-option-color-group">Red</div>
+              <div id="item-option-color-group">Orange</div>
+              <div id="item-option-color-group">Yellow</div>
+              <div id="item-option-color-group">Green</div>
+            </div>
+
+            <div id="option-size">
+              <span>SIZE</span><br>
+              <div id="item-option-size-group">XS</div>
+              <div id="item-option-size-group">S</div>
+              <div id="item-option-size-group">M</div>
+              <div id="item-option-size-group">L</div>
+              <div id="item-option-size-group">XL</div>
+            </div>
+
+            <div id="option-quantity">
+              <span>QUANTITY</span><br>
+              <select id="item-option-quantity-group" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select><br>
+             
+              <!-- Alternative Option
+              <form action="#">
+                <input type="number" min="1" max="100">
+              </form> -->
+            </div>
+          </div><br>
+
+          <div id="item-shopping">
+            <div class="item-shopping-main">
+              <div class="addtocart">Add To Cart </div>
+            </div>
+
+            <div class="item-shopping-sub">
+            <div class="addtowishlist">Add To Wishlist</div>
+            <div class="findstockinstore">Find Stock In Store</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+    </section>  
   </div>
 
   <footer class="mx-auto mt-5 py-5 bg-dark text-white text-center">
@@ -66,3 +190,6 @@
   </script>
 </body>
 </html>
+
+
+
