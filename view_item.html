@@ -94,7 +94,8 @@
       <div id="item-mapping">
         <!-- Sample
         https://www.uniqlo.com/my/en/products/E445173-000?colorCode=COL12&sizeCode=SMA003 -->
-        <ol class="item-mapping-order">
+        <!--Required to make ii horizontal-->
+        <ul class="item-mapping-order">
           <li>
             <a href="#">TSM</a>
           </li> 
@@ -104,12 +105,13 @@
           <li>
             <a href="#">Shirts</a>
           </li>
-        </ol>
+        </ul>
       </div><br>
 
       <div id="item-group">
         <div id="item-image">
-          <img src="images/item-image-1.jpg" alt="">
+          <!--Required to make it in center-->
+          <img src="https://images.unsplash.com/photo-1593757107729-eae8bcc74f8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Default Man's Shirt">
         </div>
 
         <div id="item-info">
@@ -125,19 +127,19 @@
           <div id="item-option">
             <div id="option-color">
               <span>COLOR</span><br>
-              <div id="item-option-color-group">Red</div>
-              <div id="item-option-color-group">Orange</div>
-              <div id="item-option-color-group">Yellow</div>
-              <div id="item-option-color-group">Green</div>
+              <div id="item-option-color-group"><button class="color_button">Red</button></div>
+              <div id="item-option-color-group"><button class="color_button">Orange</button></div>
+              <div id="item-option-color-group"><button class="color_button">Yellow</button></div>
+              <div id="item-option-color-group"><button class="color_button">Green</button></div>
             </div>
 
             <div id="option-size">
               <span>SIZE</span><br>
-              <div id="item-option-size-group">XS</div>
-              <div id="item-option-size-group">S</div>
-              <div id="item-option-size-group">M</div>
-              <div id="item-option-size-group">L</div>
-              <div id="item-option-size-group">XL</div>
+              <div id="item-option-size-group"><button class="size_button">XS</button></div>
+              <div id="item-option-size-group"><button class="size_button">S</button></div>
+              <div id="item-option-size-group"><button class="size_button">M</button></div>
+              <div id="item-option-size-group"><button class="size_button">L</button></div>
+              <div id="item-option-size-group"><button class="size_button">XL</button></div>
             </div>
 
             <div id="option-quantity">
@@ -164,12 +166,12 @@
 
           <div id="item-shopping">
             <div class="item-shopping-main">
-              <div class="addtocart">Add To Cart </div>
+              <div class="addtocart"><a href="https://tag-project.000webhostapp.com/tag-shopping-mall/cart.html">Add To Cart</a></div>
             </div>
 
             <div class="item-shopping-sub">
-            <div class="addtowishlist">Add To Wishlist</div>
-            <div class="findstockinstore">Find Stock In Store</div>
+            <div class="addtowishlist"><a href="#">Add To Wishlist</a></div>
+            <div class="findstockinstore"><a href="#">Find Stock In Store</a></div>
             </div>
 
           </div>
