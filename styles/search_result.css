@@ -136,3 +136,11 @@
 .list-group-item {
   border: none;
 }
+
+.container {
+  display: grid;
+  padding: 20px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: minmax(auto, auto);
+  grid-gap: 20px;
+}
