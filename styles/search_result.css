@@ -140,7 +140,7 @@
 .container {
   display: grid;
   padding: 20px;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: minmax(auto, auto);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: minmax(200px, auto);
   grid-gap: 20px;
 }
