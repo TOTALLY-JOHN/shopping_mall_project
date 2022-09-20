@@ -139,8 +139,6 @@
 
 .container {
   display: grid;
-  padding: 20px;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: minmax(auto, auto);
-  grid-gap: 20px;
+  grid-template-columns: minmax(auto);
+  grid-template-rows: minmax(auto);
 }
