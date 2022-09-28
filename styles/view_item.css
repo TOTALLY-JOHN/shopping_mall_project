@@ -57,9 +57,10 @@ a:hover {
 }
 
     #item-image {
-        display: block;
+        display: flex;
+        justify-content: center;
         width: 50%;
-        background-color: lightgray;
+        background-color: tomato;
         padding: 10px;
         margin-left: auto;
         margin-right: auto;
@@ -89,6 +90,7 @@ a:hover {
 
                 .color_button {
                     background-color: deepskyblue;
+                    
                 }
 
                 #item-option-color-group {
@@ -113,6 +115,8 @@ a:hover {
             #option-quantity {
                 background-color: mediumpurple;
                 padding: 5px;
+                display: flex;
+                justify-content: space-between;
             }
         
         #item-shopping {
