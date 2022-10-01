@@ -1,10 +1,42 @@
 #bodyContainer {
-    background-color: tomato;
+    /* background-color: tomato; */
     width: 100%;
     padding: 20px;
 }
 
 #boardform-div {
     background-color: whitesmoke;
+    border-radius: 1rem;
     padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
 }
+
+    .form-group {
+        width: 100%;
+        border-radius: 0.3rem;
+        height: 45px;
+        padding: 5px;
+    }
+        #form-content {
+            height: 300px;
+            padding: 5px;
+        }
+
+#boardform-button {
+    /* background-color: antiquewhite; */
+    padding: 0px;
+}
+    .save-button {
+        background-color: dodgerblue;
+        color: white;
+        width: 100px;
+    }
+
+    .list-button {
+        background-color: dodgerblue;
+        color: white;
+        width: 100px;
+    }
+    
