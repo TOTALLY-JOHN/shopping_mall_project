@@ -1,0 +1,10 @@
+#bodyContainer {
+    background-color: tomato;
+    width: 100%;
+    padding: 20px;
+}
+
+#boardform-div {
+    background-color: whitesmoke;
+    padding: 20px;
+}
