@@ -1,47 +1,71 @@
-/* 
-a.best_item_main {
-    text-decoration: none;
-    color: black;
-  }
-  
-  #bannerContainer {
-    background-color:darkslategrey;
-    position: relative;
-  }
-  #bodyContainer {
-    position: relative;
-  }
-  .signupdiv {
-    position: absolute;
-    left: 0;
-    width: auto;
-    height: auto;
-  }
-  .resimg {
-    position: relative;
-    width: 100%;
-    height: auto;
-  }
-  .formdiv {
-    position: absolute;
-    right: 0;
-    margin: 30px;
-  }
-  .footerdiv {
-    position: relative;
-  } */
 
-.signUpDiv {
-    width: 100%;
-    height: 800px;
-    background-size: 100%;
-    background-repeat:no-repeat;
-    background-image: url("https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?cs=srgb&dl=pexels-elle-hughes-1549200.jpg&fm=jpg");
+
+body {
+  font-family: "Noto Sans", "Noto Sans CJK KR", sans-serif;
+  max-width: 1500px;
+  margin: 0px auto 0px auto;
+  
+}
+
+a.best_item_main {
+  text-decoration: none;
+  color: black;
+}
+
+#bannerContainer {
+  background-color:darkslategrey;
+}
+
+#bodyContainer {
+  /* background-color: lightseagreen; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  
 }
 
 .formDiv {
-    width: 30%;
-    margin: 0px 0px 0px auto;
-    padding-top: 35px;
-    padding-right: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  border-color: black;
+  width: 50%;
+  margin: 0px auto;
+  padding: 30px;
 }
+
+.form_group {
+  width: auto;
+  text-align: center;
+}
+
+#uid {
+  width: 100%;
+}
+
+.address_group {
+  text-align: left;
+}
+
+#sample3_postcode {
+  width: 100%;
+}
+
+#overlap_button, #ads_overlap_button {
+  width: 90%;
+  margin-left: 10%;
+}
+
+.loginhere {
+  color: #555;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 91px;
+  margin-bottom: 5px;
+}
+
