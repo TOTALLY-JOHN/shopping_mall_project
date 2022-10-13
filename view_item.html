@@ -11,16 +11,48 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="static/js/includeHTML.js"></script>
     <link rel="stylesheet" href="styles/index.css?after">
     <link rel="stylesheet" href="styles/view_item.css?after">
   </head>
 <body>
-  <nav include-html="static/html/nav.html"></nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-4" href="#">Tag Shopping Mall</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link fs-5 px-3" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 px-3" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 px-3" href="item_list.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 px-3" href="cart.html">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 px-3" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 px-3" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 px-3" href="signup.html">Signup</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <div id="bannerContainer" class="container-fluid py-5 text-center text-white fs-4">
+  <!-- <div id="bannerContainer" class="container-fluid py-5 text-center text-white fs-4">
     VIEW ITEM
-  </div>
+  </div> -->
 
   <div id="bodyContainer" class="container-fluid">
     <!-- FILL HERE! -->
@@ -59,130 +91,69 @@
 
     <div class="div-between-line"></div><br>
 
-    <!--VIEW ITEM-->
-    <!-- <section id="item">
-      <div id="item-mapping">
-        <ul class="item-mapping-order">
-          <li>
-            <a href="#">TSM</a>
-          </li> 
-          <li>
-            <a href="#">Man</a>
-          </li> 
-          <li>
-            <a href="#">T-Shirts</a>
-          </li>
-        </ul>
-      </div><br>
- -->
-      <div id="item-group">
-        <div id="item-image">
-          <!--Required to make it in center-->
-          <img src="https://images.unsplash.com/photo-1593757107729-eae8bcc74f8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Default Man's Shirt">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div id="product_image_part">
+            <img id="product_image" src="https://images.unsplash.com/photo-1593757107729-eae8bcc74f8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Default Man's Shirt">
+          </div>
         </div>
-
-        <div id="item-info">
-          <div id="item-description">
-            <h4>
-              <span>Normal Shirt</span><br>
-              <span>RM 39.90</span><br>
-              <span>Default Man's Shirt</span><br><br>
-              <span>Designed for casual outfit</span>
-            </h4>
-          </div><br>
-
-          <div class="div-between-line"></div><br>
-
-          <div id="item-option">
-            <div id="option-color">
-              <span>COLOR</span><br>
-              <div id="color-select">
-                <select id="item-option-color-group" name="color">
-                  <option value="Red">Red</option>
-                  <option value="Blue">Blue</option>
-                  <option value="Green">Green</option>
-                  <option value="White">White</option>
-                </select>
-              </div>
-              <!-- <div id="item-option-color-group"><button class="color_button">Red</button></div>
-              <div id="item-option-color-group"><button class="color_button">Blue</button></div>
-              <div id="item-option-color-group"><button class="color_button">Black</button></div>
-              <div id="item-option-color-group"><button class="color_button">Brown</button></div> -->
-            </div>
-
-            <div id="option-size">
-              <span>SIZE</span><br>
-              <div id="size-select">
-                <select id="item-option-size-group" name="size">
-                  <option value="XS">XS</option>
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                </select>
-              </div>
-              <!-- <div id="item-option-size-group"><button class="size_button">XS</button></div>
-              <div id="item-option-size-group"><button class="size_button">S</button></div>
-              <div id="item-option-size-group"><button class="size_button">M</button></div>
-              <div id="item-option-size-group"><button class="size_button">L</button></div>
-              <div id="item-option-size-group"><button class="size_button">XL</button></div> -->
-            </div>
-
-            <div id="option-quantity">
-              <span>QUANTITY</span><br>
-              <div id="quantity-select">
-                <select id="item-option-quantity-group" name="quantity">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                </select><br>
-              </div>
-             
-              <!-- Alternative Option
-              <form action="#">
-                <input type="number" min="1" max="100">
-              </form> -->
-            </div>
-          </div><br>
-
-          <div class="div-between-line"></div><br>
-
-          <div id="item-shopping">
-            <div class="item-shopping-main">
-              <div class="addtocart">
-                <button class="addtocart-button">ADD TO CART</button>
-              </div>
-            </div><br>
-
-            <div class="item-shopping-sub">
-              <div class="addtowishlist">
-                <button class="addtowishlist-button">ADD TO WISHLIST</button>
-              </div>
-              <div class="findstockinstore">
-                <button class="findstockinstore-button">FIND STOCK IN STORE</button>
-              </div>
-            </div>
-
+        <div class="col-md-6">
+          <div id="product_description" class="pt-3">
+            <p>Normal Shirt</p>
+            <p>RM 39.90</p>
+            <p>Default Man's Shirt</p><br />
+            <p>Designed for casual outfit</p>
+            <hr />
+          </div>
+          <div id="product_option">
+            <p>
+              Color
+              <select id="select_color" class="form-control">
+                <option>Red</option>
+                <option>Blue</option>
+                <option>Green</option>
+              </select>
+            </p>
+            <p>
+              Size
+              <select id="select_size" class="form-control">
+                <option>XS</option>
+                <option>S</option>
+                <option>M</option>
+              </select>
+            </p>
+            <p>
+              Quantity
+              <select id="select_quantity" class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </p>
+          </div>
+          <div id="button_group" class="mt-5">
+            <button id="cart_button" class="btn btn-danger">Add To Cart</button>
+            <button id="wish_button" class="btn btn-info">Add To Wishlist</button>
           </div>
         </div>
       </div>
-
-      <div></div>
-      <div></div>
-    </section>  
+    </div>
   </div>
 
-  <footer include-html="static/html/footer.html"></footer>
-  
+  <footer class="mx-auto mt-5 py-5 bg-dark text-white text-center">
+    TAG SHOPPING MALL made by Marcus Shim, Danbi Lee and Jihwan Jeong<br />
+    Copyright &copy; 2022
+  </footer>
   <script>
-    includeHTML(function () {});
+    // FILL JAVASCRIPT OR jQUERY HERE!
   </script>
 </body>
 </html>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">Column 1</div>
+    <div class="col-md-6">Column 2</div>
+  </div>
+</div>

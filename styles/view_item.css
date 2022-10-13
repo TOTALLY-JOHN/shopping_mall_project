@@ -7,13 +7,13 @@
 }
 
 #search-bar {
-    /* background-color: lightblue; */
+    background-color: lightblue;
     padding: 20px;
     display: block;
 }
 
 #filter-sort {
-    /* background-color: lightblue; */
+    background-color: lightgreen;
     padding: 20px;
     display: flex;
     font-weight: bold;
@@ -23,10 +23,10 @@
 }
 
 a:link {
-color: black;
-display: block;
-background-color: transparent;
-text-decoration: none;
+    color: black;
+    display: block;
+    background-color: transparent;
+    text-decoration: none;
 }
 
 a:hover {
@@ -38,163 +38,39 @@ a:hover {
     background-color: grey;
 }
 
-#item-mapping {
-    background-color: lightblue;
-    position: relative;
-    width: auto;
-    padding: 10px;
-    display: block;
-    /* float: left; */
-}
-
-.item-mapping-order {
-    /* background-color: lightpink; */
-    width: auto;
-    margin: 10px;
-    list-style-type: none;
-}
-
-#item-group {
-    /* background-color: whitesmoke; */
-    position: relative;
-    display: flex;
-    padding: 10px;
-}
-
-#item-image {
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    /* background-color: tomato; */
-    padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
-}
-#item-info {
-    /* background-color: lightsalmon; */
-    width: 50%;
-    padding: 10px;
-    position: relative;
-}
-#item-description {
-    /* background-color: lightblue; */
-    padding: 10px;
-    font-style: italic;
-}
-
-#item-option {
-    /* background-color: lightblue; */
-    padding: 10px;
-}
-
-#option-color {
-    /* background-color: mediumspringgreen; */
-    display: flex;
-    padding: 5px;
-    font-style: italic;
-    font-weight: bold;
-    justify-content: space-between;
-}
-
-.color_button {
-    background-color: deepskyblue;
-}
-
-#option-size {
-    /* background-color: mediumturquoise; */
-    display: flex;
-    padding: 5px;
-    font-style: italic;
-    font-weight: bold;
-    justify-content: space-between;
-}
-
-.size_button {
-    background-color: deeppink;
-}
-
-                
-#option-quantity {
-    /* background-color: mediumpurple; */
-    padding: 5px;
-    font-style: italic;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-}
-
-#item-shopping {
-    /* background-color: lightblue; */
-    padding: 10px;
+#product_image_part {
     text-align: center;
 }
 
-.addtocart {
-    /* background-color: red; */
-    /* padding: 5px; */
-    /* border-style: groove; */
-    width: auto;
+#product_description {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
 }
-            
-.addtocart-button {
-    background-color: red;
-    border: 1px solid black;
-    border-radius: 0.5rem;
-    color: white;
+
+#button_group {
     width: 100%;
-    font-weight: bold;
-    display: block;
-    min-height: 45px;
-    line-height: 25px;
-    padding: 0.5em 0.25em;
-    text-align: center;
-    text-decoration: none;
-}
-            
-.item-shopping-sub {
     display: flex;
     justify-content: space-between;
 }
 
-.addtowishlist {
-    background-color: white;
-    padding: 5px;
-    /* border-style: groove; */
-    width: 50%;
+#cart_button, #wish_button {
+    width: 45%;
 }
 
-.addtowishlist-button {
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 0.5rem;
-    color: black;
-    width: 100%;
-    font-weight: bold;
-    display: block;
-    min-height: 45px;
-    line-height: 25px;
-    padding: 0.5em 0.25em;
-    text-align: center;
-    text-decoration: none;
+@media only screen and (max-width: 1176px) {
+    #product_image {
+        width: 100%;
+    }
+    #product_description {
+        font-size: 1.2rem;
+    }
 }
 
-.findstockinstore {
-background-color: white;
-padding: 5px;
-/* border-style: groove; */
-width: 50%;
-}
-.findstockinstore-button {
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 0.5rem;
-    color: black;
-    width: 100%;
-    font-weight: bold;
-    display: block;
-    min-height: 45px;
-    line-height: 25px;
-    padding: 0.5em 0.25em;
-    text-align: center;
-    text-decoration: none;
+@media only screen and (min-width: 1177px) {
+    #product_image {
+        width: 60%;
+    }
+    #product_description {
+        font-size: 1.5rem;
+    }
 }
