@@ -1,0 +1,39 @@
+
+@media only screen and (min-width: 1177px) {
+  #bodyContainer {
+    width: 70%;
+    margin: 0px auto;
+  }
+}
+
+@media only screen and (max-width: 1176px) {
+  #bodyContainer {
+    width: 90%;
+    margin: 0px auto;
+  }
+}
+
+#bodyContainer {
+  margin-top: 100px;
+}
+
+#bbsTable {
+  border: 1px solid #eee;
+}
+
+#bbsTable > tbody > tr > th {
+  background-color: #eee;
+  text-align: center;
+}
+
+#listButton, #modifyButton, #deleteButton {
+  margin: 10px;
+}
+
+#button_group {
+  /* width: 100%; */
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+}
