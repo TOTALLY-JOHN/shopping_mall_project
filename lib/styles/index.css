@@ -12,3 +12,17 @@ a.best_item_main {
 #bannerContainer {
   background-color:darkslategrey;
 }
+
+#adminBar {
+  width: 100%;
+  height: 28px;
+  background-color:navy;
+  color: white;
+}
+
+.adminMenu {
+  color: white;
+}
+.adminMenu:hover {
+  color: #aaa;
+}
