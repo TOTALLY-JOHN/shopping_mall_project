@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../static/js/includeHTML.js"></script>
     <link rel="stylesheet" href="../styles/index.css?after">
+    <link rel="stylesheet" href="../styles/login.css?after">
     <script>
       window.addEventListener("load", function(e) {
           if (window.location.href.indexOf("login_failure") > -1) {
@@ -46,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <body>
     <nav include-html="../static/html/nav.html"></nav>
     
-    <div id="bodyContainer" class="container-fluid">
+    <div id="loginContainer" class="container-fluid">
       <div class="d-flex align-items-center" style="min-height:calc(100vh - 254px);">
         <div class="col-md-6 mx-auto mt-5 ">
           <div class="d-flex justify-content-center">
@@ -54,11 +55,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           </div>
           <form class="form-horizontal" method="post" autocomplete="off">
             <div class="card-body">
-              <div class="form-group col-8 mx-auto mb-4">
+              <div class="form-group col-12 mx-auto mb-4">
                 <label for="inputId" class="fw-bolder text-muted mb-2">아이디</label>
                 <input type="text" class="form-control" placeholder="아이디를 입력하세요." id="usernameInput" name="usernameInput" style="font-size: 16px;" pattern="^[A-Za-z0-9]{4,}$" required>
               </div>
-              <div class="form-group col-8 mx-auto mb-4">
+              <div class="form-group col-12 mx-auto mb-4">
                 <label for="inputPassword" class="fw-bolder text-muted mb-2">비밀번호</label>
                 <input type="password" class="form-control" placeholder="비밀번호를 입력하세요." id="pwdInput" name="pwdInput" style="font-size: 16px;" pattern="^.{8,}$" title="Password must contain at least 8 characters." required>
               </div>
@@ -66,12 +67,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <div class="d-flex justify-content-center mb-5">
                 <input type="submit" class="btn btn-primary" value="LOGIN" style="color: white;" />
               </div>
-              <div class="d-flex justify-content-evenly col-8 mx-auto mt-5">
-                <a href="forgotPassword.php" class="col-4 text-decoration-none text-secondary">
+              <div class="d-flex justify-content-evenly col-12 mx-auto mt-5">
+                <a href="forgotPassword.php" class="col-6 text-decoration-none text-secondary text-center">
                   <span class="fw-semibold">forgot password?</span>
                 </a>
                 <span class="border-end"></span>
-                <a href="signup.php" class="col-4 text-decoration-none text-secondary text-center">
+                <a href="signup.php" class="col-6 text-decoration-none text-secondary text-center">
                   <span class="fw-semibold">Sign up</span>
                 </a>
               </div>
