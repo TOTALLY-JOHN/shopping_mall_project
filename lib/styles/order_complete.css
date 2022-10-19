@@ -1,0 +1,17 @@
+@media only screen and (max-width: 768px) {
+  #orderComplete_container {
+    width: 100%;
+    margin: 0px auto;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  #orderComplete_container {
+    width: 80%;
+    margin: 0px auto;
+  }
+}
+
+#buttonContainer {
+  text-align: center;
+}
