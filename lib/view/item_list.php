@@ -1,5 +1,9 @@
 <?php
   session_start();
+
+  //! [CONNECT THE CONTROLLER]
+  require_once('../controller/product_controller.php');
+  $controllers = new ProductController();
 ?>
 <!DOCTYPE html>
 <html>

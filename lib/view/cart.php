@@ -1,5 +1,9 @@
 <?php
   session_start();
+
+  //! [CONNECT THE CONTROLLER]
+  require_once('../controller/cart_controller.php');
+  $controllers = new CartController();
 ?>
 <!DOCTYPE html>
 <html>

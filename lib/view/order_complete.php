@@ -1,5 +1,9 @@
 <?php
   session_start();
+
+  //! [CONNECT THE CONTROLLER]
+  require_once('../controller/order_controller.php');
+  $controllers = new OrderController();
 ?>
 <!DOCTYPE html>
 <html>

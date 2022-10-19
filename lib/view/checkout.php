@@ -1,5 +1,9 @@
 <?php
   session_start();
+
+  //! [CONNECT THE CONTROLLER]
+  require_once('../controller/checkout_controller.php');
+  $controllers = new CheckoutController();
 ?>
 <!DOCTYPE html>
 <html>

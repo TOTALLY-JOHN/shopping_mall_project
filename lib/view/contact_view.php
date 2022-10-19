@@ -1,5 +1,9 @@
 <?php
   session_start();
+
+  //! [CONNECT THE CONTROLLER]
+  require_once('../controller/contact_controller.php');
+  $controllers = new ContactController();
 ?>
 <!DOCTYPE html>
 <html>

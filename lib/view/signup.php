@@ -1,5 +1,9 @@
 <?php
   session_start();
+
+  //! [CONNECT THE CONTROLLER]
+  require_once('../controller/signup_controller.php');
+  $controllers = new SignupController();
 ?>
 <!DOCTYPE html>
 <html lang="en">
