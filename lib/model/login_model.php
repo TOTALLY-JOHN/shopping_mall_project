@@ -50,17 +50,35 @@
                 $DATABASE_ENV = DatabaseConfig::DEVELOPMENT_ENV;
 
                 // 로그인 페이지로부터 아이디, 비밀번호 받아오기
+                $dbc = DatabaseConfig::getDatabaseConfig($DATABASE_ENV);
+            
+                // 로그인 페이지로부터 아이디, 비밀번호 받아오기
                 $username = test_input($_REQUEST["usernameInput"]);
                 $userPwd = test_input($_REQUEST["pwdInput"]);
 
-                if ($username === "admin" && $userPwd === "test123!") {
-                    $_SESSION['username'] = $username;
-                    $_SESSION['userFullName'] = "관리자";
-                    $_SESSION['userType'] = "ADMIN";
-                    return 'login-success';
-                }
+                // MySQL query문 작성
+                $q1 = "SELECT username, userFirstName, userLastName, userPwd, userType FROM users WHERE username = '".$username."' AND userPwd = '".hash('sha256', $userPwd)."'";
+                
+                // Query 실행
+                $r1 = @mysqli_query ($dbc, $q1);
 
-                return 'invalid-user';
+                // 배열 형태로 가져온다.
+                $row = mysqli_fetch_array($r1, MYSQLI_ASSOC);
+
+                // 정보가 있을 경우
+                if (isset($_REQUEST['usernameInput']) && isset($_REQUEST['pwdInput'])) {
+                    // 아이디가 일치하는 경우
+                    if($row['username'] == $username) {
+                        $_SESSION['username'] = $row['username'];
+                        $_SESSION['userFullName'] = $row['userFirstName'] . " " . $row['userLastName'];
+                        $_SESSION['userType'] = $row['userType'];
+                        return 'login-success';
+                    } 
+                    // 정보가 일치하지 않는 경우
+                    else {
+                        return 'invalid user';
+                    }
+                }
             }
         }
     }

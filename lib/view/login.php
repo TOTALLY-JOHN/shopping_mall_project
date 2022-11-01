@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="card-body">
               <div class="form-group col-12 mx-auto mb-4">
                 <label for="inputId" class="fw-bolder text-muted mb-2">아이디</label>
-                <input type="text" class="form-control" placeholder="아이디를 입력하세요." id="usernameInput" name="usernameInput" style="font-size: 16px;" pattern="^[A-Za-z0-9]{4,}$" required>
+                <input type="text" class="form-control" placeholder="아이디를 입력하세요." id="usernameInput" name="usernameInput" style="font-size: 16px;" pattern="^[A-Za-z0-9_]{4,}$" required>
               </div>
               <div class="form-group col-12 mx-auto mb-4">
                 <label for="inputPassword" class="fw-bolder text-muted mb-2">비밀번호</label>
