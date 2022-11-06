@@ -13,7 +13,7 @@
             $pdiscountprice = $_POST['pdiscountprice'];
             $pimage = $_POST['pimage'];
             $pstock = $_POST['pstock'];
-            $totalprice = $pdiscountprice * $pstock;
+            $totalprice = $pstock * $pdiscountprice;
 
             $stmt = $conn->prepare('SELECT productId FROM cart WHERE productId=?');
             $stmt->bind_param('s',$pid);
@@ -29,12 +29,12 @@
         
               echo '<div class="alert alert-success alert-dismissible mt-2">
                       <button type="button" class="close" data-dismiss="alert">&times;</button>
-                      <strong>Item added to your cart!</strong>
+                      <strong>Item added to cart!</strong>
                     </div>';
             } else {
               echo '<div class="alert alert-danger alert-dismissible mt-2">
                       <button type="button" class="close" data-dismiss="alert">&times;</button>
-                      <strong>Item already added to your cart!</strong>
+                      <strong>Item already added to cart!</strong>
                     </div>';
             }
           }
@@ -42,13 +42,45 @@
         }
 
         public function fetchCartItems() {
-          // FILL HERE
-          
+          // 장바구니 제품 가져오기
+          $sqlQ = "SELECT * FROM products WHERE pid=?"; 
+          $stmt = $db->prepare($sqlQ); 
+          $stmt->bind_param("i", $db_id); 
+          $db_id = $productId; 
+          $stmt->execute(); 
+          $result = $stmt->get_result(); 
+          $productRow = $result->fetch_assoc(); 
+  
+          $itemData = array( 
+              'pid' => $productsRow['pid'],
+              'pname' => $productsRow['pname'],
+              'pcategory' => $productsRow['pcategory'],
+              'poriginalprice' => $productsRow['poriginalprice'],
+              'pdiscountprice' => $productsRow['pdiscountprice'],
+              'pimage' => $productsRow['pimage'],  
+              'pstock' => 1 
+          ); 
         }
 
         public function updateCartItems() {
-          // FILL HERE
+          // 장바구니 제품 업데이트
+          if(isset($_POST["pstock"]))
+          {
+            $pid            = $_POST["pid"];
+            $pname          = $_POST["pname"];
+            $pcategory      = $_POST["pcategory"];
+            $poriginalprice = $_POST["poriginalprice"];
+            $pdiscountprice = $_POST["pdiscountprice"];
+            $pimage         = $_POST["pimage"];
+            $pstock         = $_POST["pstock"];
 
+            $totalprice     = $pstock * $pdiscountprice;
+
+            $update_stmt=$db -> prepare("UPDATE cart SET productStock = pstock, totalprice=:totalprice WHERE productId=:pid");
+            $update_stmt -> execute(array(":pstock"=>$pstock,
+                                          ":totalprice"=>$totalprice,
+                                          ":pid"=>$productId));
+          }
         }
     }
 ?>
