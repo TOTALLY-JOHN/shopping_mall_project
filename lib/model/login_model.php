@@ -57,7 +57,7 @@
                 $userPwd = test_input($_REQUEST["pwdInput"]);
 
                 // MySQL query문 작성
-                $q1 = "SELECT username, userFirstName, userLastName, userPwd, userType FROM users WHERE username = '".$username."' AND userPwd = '".hash('sha256', $userPwd)."'";
+                $q1 = "SELECT userId, username, userFirstName, userLastName, userPwd, userType FROM users WHERE username = '".$username."' AND userPwd = '".hash('sha256', $userPwd)."'";
                 
                 // Query 실행
                 $r1 = @mysqli_query ($dbc, $q1);
@@ -69,6 +69,7 @@
                 if (isset($_REQUEST['usernameInput']) && isset($_REQUEST['pwdInput'])) {
                     // 아이디가 일치하는 경우
                     if($row['username'] == $username) {
+                        $_SESSION['userId'] = $row['userId'];
                         $_SESSION['username'] = $row['username'];
                         $_SESSION['userFullName'] = $row['userFirstName'] . " " . $row['userLastName'];
                         $_SESSION['userType'] = $row['userType'];

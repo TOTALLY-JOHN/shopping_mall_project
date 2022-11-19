@@ -4,6 +4,9 @@
   //! [CONNECT THE CONTROLLER]
   require_once('../controller/cart_controller.php');
   $controllers = new CartController();
+  // if (!isset($_SESSION["userId"]))
+  $userId = $_SESSION["userId"];
+  $data = $controllers->fetchCart($userId);
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,19 +48,21 @@
                   <div class="p-5">
                     <div class="d-flex justify-content-between align-items-center mb-5">
                       <h1 class="fw-bold mb-0 text-black">장바구니</h1>
-                      <h6 class="mb-0 text-muted">3 items</h6>
+                      <h6 class="mb-0 text-muted"><span id="totalQuantity1"></span> items</h6>
                     </div>
                     <hr class="my-4">
-  
+
+                    <?php
+                      while($row = mysqli_fetch_array($data, MYSQLI_ASSOC)) {
+                    ?>
                     <div class="row mb-4 d-flex justify-content-between align-items-center">
-                      <div class="col-md-2 col-lg-2 col-xl-2">
+                      <div class="col-md-3 col-lg-2 col-xl-2">
                         <img
-                          src="https://picsum.photos/id/103/300/300"
+                          src="<?php echo $row["productImage"]; ?>"
                           class="img-fluid rounded-3" alt="Dynamic Remarketing">
                       </div>
                       <div class="col-md-3 col-lg-3 col-xl-3">
-                        <h6 class="text-muted">Analytics E-Commerce </h6>
-                        <h6 class="text-black mb-0">TAG Skillset</h6>
+                        <h6 class="text-muted"><?php echo $row["productName"]; ?></h6>
                       </div>
                       <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                         <button class="btn btn-link px-2"
@@ -65,7 +70,7 @@
                           <i class="fas fa-minus"></i>
                         </button>
   
-                        <input id="form1" min="0" name="quantity" value="1" type="number"
+                        <input id="form1" min="0" name="quantity" value="<?php echo $row["cartQuantity"];?>" type="number"
                           class="form-control form-control-sm" />
   
                         <button class="btn btn-link px-2"
@@ -74,7 +79,7 @@
                         </button>
                       </div>
                       <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                        <h6 class="mb-0">29,900원</h6>
+                        <h6 class="mb-0 cartProductPrice"><?php echo $row["productDiscountPrice"]; ?></h6>
                       </div>
                       <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                         <a onclick="DeleteItem()" class="text-muted"><img
@@ -82,82 +87,10 @@
                           class="img-fluid rounded-3" alt="Dynamic Remarketing" style="width:3rem;"></a>
                       </div>
                     </div>
-  
                     <hr class="my-4">
-  
-                    <div class="row mb-4 d-flex justify-content-between align-items-center">
-                      <div class="col-md-2 col-lg-2 col-xl-2">
-                        <img
-                          src="https://picsum.photos/id/104/300/300"
-                          class="img-fluid rounded-3" alt="SDK Implementation">
-                      </div>
-                      <div class="col-md-3 col-lg-3 col-xl-3">
-                        <h6 class="text-muted">SDK Implementation</h6>
-                        <h6 class="text-black mb-0">Firebase SKillset</h6>
-                      </div>
-                      <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                        <button class="btn btn-link px-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                          <i class="fas fa-minus"></i>
-                        </button>
-  
-                        <input id="form1" min="0" name="quantity" value="1" type="number"
-                          class="form-control form-control-sm" />
-  
-                        <button class="btn btn-link px-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                          <i class="fas fa-plus"></i>
-                        </button>
-                      </div>
-                      <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                        <h6 class="mb-0">29,900원</h6>
-                      </div>
-                      <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                        <a onclick="DeleteItem()" class="text-muted">
-                          <img
-                          src="https://cdn4.iconfinder.com/data/icons/linecon/512/delete-512.png"
-                          class="img-fluid rounded-3" alt="SDK Implementation" style="width:3rem;"></a>
-                      </div>
-                    </div>
-  
-                    <hr class="my-4">
-  
-                    <div class="row mb-4 d-flex justify-content-between align-items-center">
-                      <div class="col-md-2 col-lg-2 col-xl-2">
-                        <img
-                          src="https://picsum.photos/id/106/300/300"
-                          class="img-fluid rounded-3" alt="Enhanced Conversion">
-                      </div>
-                      <div class="col-md-3 col-lg-3 col-xl-3">
-                        <h6 class="text-muted">Enhanced Conversion</h6>
-                        <h6 class="text-black mb-0">TAG Skillset</h6>
-                      </div>
-                      <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                        <button class="btn btn-link px-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                          <i class="fas fa-minus"></i>
-                        </button>
-  
-                        <input id="form1" min="0" name="quantity" value="1" type="number"
-                          class="form-control form-control-sm" />
-  
-                        <button class="btn btn-link px-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                          <i class="fas fa-plus"></i>
-                        </button>
-                      </div>
-                      <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                        <h6 class="mb-0">29,900원</h6>
-                      </div>
-                      <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                        <a onclick="DeleteItem()"  class="text-muted">
-                          <img
-                          src="https://cdn4.iconfinder.com/data/icons/linecon/512/delete-512.png"
-                          class="img-fluid rounded-3" alt="Enhanced Conversion" style="width:3rem;"></a>
-                      </div>
-                    </div>
-  
-                    <hr class="my-4">
+                    <?php
+                      }
+                    ?>
   
                     <div class="pt-5">
                       <h6 class="mb-0"><a href="#!" class="text-body">
@@ -171,8 +104,8 @@
                     <hr class="my-4">
   
                     <div class="d-flex justify-content-between mb-4">
-                      <h5 class="text-uppercase">상품수: 3</h5>
-                      <h5 id="itemTotalPriceWithoutShpping">89,700원</h5>
+                      <h5 class="text-uppercase">상품수: <span id="totalQuantity2"></span></h5>
+                      <h5 id="itemTotalPriceWithoutShpping"></h5>
                     </div>
   
                     <h5 class="text-uppercase mb-3">배송</h5>
@@ -197,7 +130,7 @@
   
                     <div class="d-flex justify-content-between mb-5">
                       <h5 class="text-uppercase">총 금액:</h5>
-                      <h5 id="totalPrice">92,200원</h5>
+                      <h5 id="totalPrice"></h5>
                     </div>
   
                     <button type="button" class="btn btn-dark btn-block btn-lg"
@@ -218,7 +151,30 @@
   
   <script>
     includeHTML(function () {});
-    // FILL JAVASCRIPT OR jQUERY HERE!
+
+    window.addEventListener('load', () => {
+      let quantities = [...document.querySelectorAll("input[name=quantity]")];
+      let cartProductPrices = [...document.querySelectorAll(".cartProductPrice")];
+      let totalQuantity = 0;
+      let cartProductTotalPrice = 0.0;
+      if (quantities.length === 1) {
+        totalQuantity = quantities[0].value;
+      } else {
+        totalQuantity = quantities.reduce((a, b) => Number(a.value) + Number(b.value));
+      }
+      if (cartProductPrices.length === 1) {
+        cartProductTotalPrice = Number(cartProductPrices[0].innerText);
+      } else {
+        cartProductTotalPrice = cartProductPrices.reduce((a, b) => Number(a.innerText) + Number(b.innerText));
+      }
+      
+      document.querySelector("#itemTotalPriceWithoutShpping").innerHTML = cartProductTotalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + "원";
+      let tempPrice = cartProductTotalPrice + 2500;
+      document.getElementById("totalPrice").innerText = tempPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + "원";
+      document.querySelector("#totalQuantity1").innerHTML = totalQuantity;
+      document.querySelector("#totalQuantity2").innerHTML = totalQuantity;
+    });
+
     function calculateTotal() {
       let priceWithoutShipping = +document.getElementById("itemTotalPriceWithoutShpping").innerText.replace(/[^\d]/g, '');
       let shippingFee = +document.getElementById("shippingFee").value;
