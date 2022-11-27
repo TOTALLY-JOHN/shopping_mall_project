@@ -35,26 +35,9 @@
   <div id="bodyContainer" class="container-fluid mt-5">
     <div id="checkout_container" class="container">
       <h2>주문상품</h1>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>상품 번호</th>
-            <th>상품 정보</th>
-            <th>수량</th>
-            <th>배송비</th>
-            <th>합계</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>맥북 프로</td>
-            <td>2</td>
-            <td>2,500원</td>
-            <td>1,700,000원</td>
-          </tr>
-        </tbody>
-      </table><br />
+      <div id="checkoutProductContainer">
+      </div>
+      <br />
 
       <h2 class="mt-5">주문정보</h2>
       <form action="checkout_action.php" autocomplete="off">
@@ -101,7 +84,44 @@
   
   <script>
     includeHTML(function () {});
+    
     // FILL JAVASCRIPT OR jQUERY HERE!
+    window.addEventListener("load", (e) => {
+      let products = JSON.parse(window.sessionStorage.getItem("checkoutProducts"));
+      let html = `
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>상품 번호</th>
+            <th>상품 정보</th>
+            <th>수량</th>
+            <th>배송비</th>
+            <th>합계</th>
+          </tr>
+        </thead>
+        <tbody>
+      `;
+      
+      for (let i = 0; i < products.length; i++) {
+        console.log(products);
+        html += `
+          <tr>
+            <td>${products[i].productId}</td>
+            <td>${products[i].productName}</td>
+            <td>${products[i].quantity}</td>
+            <td>${products[i].shippingFee}</td>
+            <td>${products[i].productPrice}</td>
+          </tr>
+        `;
+      }
+      html += `
+        </tbody>
+      </table>
+      `;
+      document.querySelector("#checkoutProductContainer").innerHTML = html;
+    });
+
+
     function calculateTotal() {
       let priceWithoutShipping = +document.getElementById("itemTotalPriceWithoutShpping").innerText.replace(/[^\d]/g, '');
       let shippingFee = +document.getElementById("shippingFee").value;

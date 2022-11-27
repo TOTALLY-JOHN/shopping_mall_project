@@ -57,12 +57,13 @@
                     ?>
                     <div class="row mb-4 d-flex justify-content-between align-items-center">
                       <div class="col-md-3 col-lg-2 col-xl-2">
+                        <input class="productIdArr" type="hidden" value="<?php echo $row["productId"]; ?>">
                         <img
                           src="<?php echo $row["productImage"]; ?>"
                           class="img-fluid rounded-3" alt="Dynamic Remarketing">
                       </div>
                       <div class="col-md-3 col-lg-3 col-xl-3">
-                        <h6 class="text-muted"><?php echo $row["productName"]; ?></h6>
+                        <h6 class="productNameArr text-muted"><?php echo $row["productName"]; ?></h6>
                       </div>
                       <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                         <button class="btn btn-link px-2"
@@ -70,7 +71,7 @@
                           <i class="fas fa-minus"></i>
                         </button>
   
-                        <input id="form1" min="0" name="quantity" value="<?php echo $row["cartQuantity"];?>" type="number"
+                        <input class="quantityArr" min="0" name="quantity" value="<?php echo $row["cartQuantity"];?>" type="number"
                           class="form-control form-control-sm" />
   
                         <button class="btn btn-link px-2"
@@ -79,7 +80,7 @@
                         </button>
                       </div>
                       <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                        <h6 class="mb-0 cartProductPrice"><?php echo $row["productDiscountPrice"]; ?></h6>
+                        <h6 class="cartProductPriceArr mb-0"><?php echo $row["productDiscountPrice"]; ?></h6>
                       </div>
                       <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                         <a onclick="DeleteItem()" class="text-muted"><img
@@ -133,8 +134,8 @@
                       <h5 id="totalPrice"></h5>
                     </div>
   
-                    <button type="button" class="btn btn-dark btn-block btn-lg"
-                      data-mdb-ripple-color="dark" onclick="Checkout()" style="width:100%;">CHECKOUT</button>
+                    <a id="checkoutButton" href="checkout.php" class="btn btn-dark btn-block btn-lg"
+                      data-mdb-ripple-color="dark" style="width:100%;">CHECKOUT</a>
   
                   </div>
                 </div>
@@ -154,7 +155,7 @@
 
     window.addEventListener('load', () => {
       let quantities = [...document.querySelectorAll("input[name=quantity]")];
-      let cartProductPrices = [...document.querySelectorAll(".cartProductPrice")];
+      let cartProductPrices = [...document.querySelectorAll(".cartProductPriceArr")];
       let totalQuantity = 0;
       let cartProductTotalPrice = 0.0;
       if (quantities.length === 1) {
@@ -182,14 +183,28 @@
       
       document.getElementById("totalPrice").innerText = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + "원";
     }
-    function Checkout() {
-      window.alert('Still Developing!');
 
-    }
+    document.querySelector("#checkoutButton")?.addEventListener("click", (e) => {
+      // productId, quantity
+      let productIds = document.querySelectorAll(".productIdArr");
+      let quantityIds = document.querySelectorAll(".quantityArr");
+      let productNames = document.querySelectorAll(".productNameArr");
+      let productPrices = document.querySelectorAll(".cartProductPriceArr");
+      let shippingFee = document.querySelector("#shippingFee").value;
+      let products = [];
 
-    function DeleteItem() {
-      window.alert('Still Developing!');
-    }
+      for (let i = 0; i < productIds.length; i++) {
+        products.push({
+          "productId": productIds[i].value,
+          "productName": productNames[i].innerText,
+          "productPrice": productPrices[i].innerText.replace(/\B(?=(\d{3})+(?!\d))/g, ',') + "원",
+          "shippingFee": shippingFee.replace(/\B(?=(\d{3})+(?!\d))/g, ',') + "원",
+          "quantity": quantityIds[i].value
+        });
+      }
+
+      window.sessionStorage.setItem("checkoutProducts", JSON.stringify(products));
+    });
   </script>
 </body>
 </html>

@@ -49,7 +49,7 @@
           $dbc = DatabaseConfig::getDatabaseConfig($DATABASE_ENV);
 
           // 가져와하는 데이터: 상품 이미지, 상품명, 상품수량, 합계
-          $sql = "SELECT productName, productDiscountPrice, productImage, cartQuantity FROM carts JOIN products ON carts.productId = products.productId WHERE carts.userId = $userId";
+          $sql = "SELECT carts.productId, productName, productDiscountPrice, productImage, cartQuantity FROM carts JOIN products ON carts.productId = products.productId WHERE carts.userId = $userId";
           
           $data = @mysqli_query ($dbc, $sql);
           return $data;
@@ -58,7 +58,7 @@
           $dbc = DatabaseConfig::getDatabaseConfig($DATABASE_ENV);
 
           // 가져와하는 데이터: 상품 이미지, 상품명, 상품수량, 합계
-          $sql = "SELECT productName, productDiscountPrice, productImage, cartQuantity FROM carts JOIN products ON carts.productId = products.productId WHERE carts.userId = $userId";
+          $sql = "SELECT carts.productId, productName, productDiscountPrice, productImage, cartQuantity FROM carts JOIN products ON carts.productId = products.productId WHERE carts.userId = $userId";
           
           $data = @mysqli_query ($dbc, $sql);
           return $data;
