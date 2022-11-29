@@ -4,9 +4,14 @@
   //! [CONNECT THE CONTROLLER]
   require_once('../controller/signup_controller.php');
   $controllers = new SignupController();
+
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $controllers->registerUser();
+  }
+
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, target-densitydpi=medium-dpi" />
@@ -22,6 +27,13 @@
     <script src="../static/js/includeHTML.js"></script>
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="stylesheet" href="../styles/signup.css">
+    <script>
+      window.addEventListener("load", function(e) {
+          if (window.location.href.indexOf("signup_failure") > -1) {
+            alert("회원가입에 실패하였습니다.");
+          }
+      });
+    </script>
 </head>
 <body>
   <?php 
@@ -29,29 +41,30 @@
   ?>
   <nav include-html="../static/html/nav.html"></nav>
     
-  <div id="bannerContainer" class="container-fluid py-5 text-center text-white fs-4">
+  <!-- <div id="bannerContainer" class="container-fluid py-5 text-center text-white fs-4">
     Sign Up
-  </div><br>
+  </div><br> -->
 
   <div id="bodyContainer" class="container-fluid mx-auto">
-    <div class="formDiv mx auto py-5">
-      <form method="post" autocomplete="off">
+    <div class="formDiv mx-auto py-5">
+      <form class="form-group" method="post" autocomplete="off">
         <h2 class="formTitle"><b>
           Create Account
         </h2><br>
 
         <div class="form_group">
-          <input type="text" id="uname" name="name" placeholder="User Name" minlength="4" class="form-control" required><br>
+          <input type="text" id="uLastName" name="userLastName" placeholder="성"  class="form-control" required><br>
+          <input type="text" id="uFirstName" name="userFirstName" placeholder="이름" class="form-control" required><br>
         </div>
 
         <div class="form_group">
           <table style="width:100%;">
             <tbody>
               <td>
-                <input type="text" id="uid" name="userid" check_result="fail" placeholder="User ID" minlength="4" pattern="^([a-z0-9_]){6,50}$" class="form-control" required>
+                <input type="text" id="uid" name="userId" check_result="fail" placeholder="아이디" minlength="4" pattern="^([a-z0-9_]){6,50}$" class="form-control" required>
               </td>
               <td>
-                <input type="button" id="overlap_button" class="btn btn-warning" onclick="id_overlap_check()" value="Verify"/>
+                <input type="button" id="overlap_button" class="btn btn-warning" onclick="id_overlap_check()" value="확인"/>
               </td>
             </tbody>
           </table>
@@ -59,39 +72,39 @@
         </div>
 
         <div class="form_group">
-          <input type="password" id="pass1" onchange="check_pw()" name="pass1" value="" placeholder="Password" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" class="form-control" required><br>
+          <input type="password" id="pass1" onchange="check_pw()" name="pass1" value="" placeholder="비밀번호" minlength="8" pattern="^[a-zA-Z\\d`~!@#$%^&*()-_=+]{6,16}$" class="form-control" required><br>
         </div>
 
         <div class="form_group">
-          <input type="password" id="pass2" onchange="check_pw()" name="pass2" placeholder="Confrim Password" minlength="8" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" class="form-control" required>&nbsp;<span id="check"></span>
+          <input type="password" id="pass2" onchange="check_pw()" name="pass2" placeholder="비밀번호 확인" minlength="8" pattern="^[a-zA-Z\\d`~!@#$%^&*()-_=+]{6,16}$" class="form-control" required>&nbsp;<span id="check"></span>
         </div>
         
         <div class="form_group">
-          <input type="email" id="uemail" name="email" placeholder="User Email" class="form-control" required><br>
+          <input type="email" id="uemail" name="userEmail" placeholder="이메일" class="form-control" required><br>
         </div>
 
         <div class="form_group">
-          <input type="tel" id="uphone#" name="phone#" placeholder="User Phone Number" class="form-control" required><br>
+          <input type="tel" id="uphone#" name="userPhone" placeholder="휴대폰번호" class="form-control" required><br>
         </div>
             
         <div class="address_group">
           <table style="width:100%;">
             <tbody>
               <td>
-                <input type="text" id="sample3_postcode" placeholder="Zipcode" class="form-control">
+                <input type="text" id="sample3_postcode" name="postCode" placeholder="우편번호" class="form-control">
               </td>
               <td>
-                <input type="button" id="ads_overlap_button" class="btn btn-warning" onclick="sample3_execDaumPostcode()" value="Search">
+                <input type="button" id="ads_overlap_button" class="btn btn-warning" onclick="sample3_execDaumPostcode()" value="검색">
               </td>
             </tbody>
           </table>
           <br />
           
-          <input type="text" id="sample3_address" placeholder="Address" class="form-control"><br>
-          <input type="text" id="sample3_detailAddress" placeholder="Detail Address" class="form-control"><br>
-          <input type="text" id="sample3_extraAddress" placeholder="Remark" class="form-control">
+          <input type="text" id="sample3_address" name="address" placeholder="주소" class="form-control"><br>
+          <input type="text" id="sample3_detailAddress" name="detailAddress" placeholder="상세주소" class="form-control"><br>
+          <!-- <input type="text" id="sample3_extraAddress" placeholder="Remark" class="form-control"> -->
 
-          <div id="wrap" style="display:none;border:1px solid;width:500px;height:300px;margin:5px 0;position:relative">
+          <div id="wrap" style="display:none;border:1px solid;width:331px;height:300px;margin:5px 0;position:relative">
           <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
           </div><br><br>
         </div>
@@ -126,41 +139,47 @@
     
     /* Verify User ID */
     function id_overlap_check() {
-
-      $('#uid').change(function () {
-        $('#id_check_sucess').hide();
-        $('.id_overlap_button').show();
-        $('#uid').attr("check_result", "fail");
-      })
-
-      if ($('#uid').attr("check_result") == "fail"){
-      alert("Please verify User ID.");
-      $('#uid').focus();
-      return false;
+      if($('#uid').val() == ""){
+        alert("아이디를 입력해주세요.")
+        $('#uid').focus();
+        return;
       }
 
-      id_overlap_input = document.querySelector('input[name="username"]');
+      // $('#uid').change(function () {
+      //   $('#id_check_sucess').hide();
+      //   $('.id_overlap_button').show();
+      //   $('#uid').attr("check_result", "fail");
+      // })
 
+      // if ($('#uid').attr("check_result") == "fail"){
+      //   alert("Please verify User ID.");
+      //   $('#uid').focus();
+      //   return false;
+      // }
+
+      id_overlap_input = $('#uid');
       $.ajax({
-        url: "{% url 'lawyerAccount:id_overlap_check' %}",
+        url: "../model/signup_id_check.php",
+        type: "POST",
         data: {
-        'username': id_overlap_input.value
+          username: $('#uid').val()
         },
-        datatype: 'json',
+        dataType: 'text',
         success: function (data) {
-          console.log(data['overlap']);
-          if (data['overlap'] == "fail") {
-            alert("The User ID already exists.");
+          if (data == "fail") {
+            alert("이미 사용중인 아이디입니다.")
             id_overlap_input.focus();
             return;
           } else {
-            alert("The User ID is available.");
+            alert("사용 가능한 아이디입니다.");
             $('#uid').attr("check_result", "success");
-            $('#id_check_sucess').show();
-            $('.id_overlap_button').hide();
             return;
           }
-        }
+        },
+        error: function(request, status, error) {
+				//에러
+				console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			  }
       });
     }
 
@@ -240,10 +259,10 @@
               extraAddr = ' (' + extraAddr + ')';
           }
           // 조합된 참고항목을 해당 필드에 넣는다.
-          document.getElementById("sample3_extraAddress").value = extraAddr;
+          // document.getElementById("sample3_extraAddress").value = extraAddr;
       
       } else {
-          document.getElementById("sample3_extraAddress").value = '';
+          // document.getElementById("sample3_extraAddress").value = '';
       }
 
       // 우편번호와 주소 정보를 해당 필드에 넣는다.

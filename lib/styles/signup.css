@@ -2,7 +2,6 @@ body {
   font-family: "Noto Sans", "Noto Sans CJK KR", sans-serif;
   max-width: 1500px;
   margin: 0px auto 0px auto;
-  
 }
 
 a.best_item_main {
@@ -11,7 +10,7 @@ a.best_item_main {
 }
 
 #bannerContainer {
-  background-color:darkslategrey;
+  background-color: darkslategrey;
 }
 
 @media only screen and (max-width: 768px) {
@@ -49,7 +48,6 @@ a.best_item_main {
     justify-content: center;
     padding: 20px;
     position: relative;
-    
   }
 
   .formDiv {
@@ -66,14 +64,6 @@ a.best_item_main {
   }
 }
 
-
-
-
-.form_group {
-  width: auto;
-  text-align: center;
-}
-
 #uid {
   width: 100%;
 }
@@ -86,7 +76,8 @@ a.best_item_main {
   width: 100%;
 }
 
-#overlap_button, #ads_overlap_button {
+#overlap_button,
+#ads_overlap_button {
   width: 90%;
   margin-left: 10%;
 }
@@ -98,4 +89,3 @@ a.best_item_main {
   margin-top: 91px;
   margin-bottom: 5px;
 }
-

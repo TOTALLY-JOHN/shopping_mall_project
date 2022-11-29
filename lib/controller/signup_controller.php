@@ -13,6 +13,12 @@
         // 기능 구현
         public function registerUser() {
             $result = $this->signupModel->register();
+            if ($result == 'signup-success') {
+              // header('location: ../view/main.php');
+          } 
+          else {    
+              header('location: ../view/signup.php?signup_failure');
+          }
         }
     }
 ?>
