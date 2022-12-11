@@ -11,8 +11,15 @@
         }
 
         // 기능 구현
-        public function makeProductPayment() {
-            $result = $this->checkoutModel->makePayment();
+        public function makeProductOrder() {
+            $result = $this->checkoutModel->makeOrder();
+
+            if ($result == TRUE) {
+                header('location: ../view/order_complete.php');
+            } 
+            else {    
+                header('location: ../view/checkout.php?login_failure');
+            }
         }
     }
 ?>

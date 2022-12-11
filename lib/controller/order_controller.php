@@ -11,8 +11,8 @@
         }
 
         // 기능 구현
-        public function makeProductOrders() {
-            $result = $this->orderModel->makeOrders();
+        public function fetchProductOrders() {
+            $result = $this->orderModel->fetchOrders();
         }
     }
 ?>

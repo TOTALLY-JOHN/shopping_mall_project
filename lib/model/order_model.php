@@ -2,11 +2,7 @@
     // 데이터베이스 클래스 불러오기
     require_once 'database_config.php';
 
-    class CheckoutModel {
-        public function makeOrders() {
-          // FILL HERE
-        }
-
+    class OrderModel {
         public function fetchOrders() {
           // FILL HERE
         }

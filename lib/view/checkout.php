@@ -4,6 +4,9 @@
   //! [CONNECT THE CONTROLLER]
   require_once('../controller/checkout_controller.php');
   $controllers = new CheckoutController();
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $controllers->makeProductOrder();
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,7 +43,7 @@
       <br />
 
       <h2 class="mt-5">주문정보</h2>
-      <form action="checkout_action.php" autocomplete="off">
+      <form action="" autocomplete="off" method="post">
         <table class="table table">
           <tbody>
             <tr>
@@ -72,6 +75,8 @@
             </tr>
           </tbody>
         </table>
+        <div id="formHiddenContainer">
+        </div>
         <div id="buttonContainer" class="mt-5">
           <input type="submit" class="btn btn-primary" value="결제하기">
         </div>
@@ -102,8 +107,17 @@
         <tbody>
       `;
       
+      let productIdArr = "", quantityArr = "";
+      let orderNo = new Date().getTime();
       for (let i = 0; i < products.length; i++) {
-        console.log(products);
+        if (i < products.length - 1) {
+          productIdArr += products[i].productId + ",";
+          quantityArr += products[i].quantity + ",";
+        } else {
+          productIdArr += products[i].productId;
+          quantityArr += products[i].quantity;
+        }
+        
         html += `
           <tr>
             <td>${products[i].productId}</td>
@@ -116,9 +130,15 @@
       }
       html += `
         </tbody>
-      </table>
+      </table>`;
+
+      const hiddenHTML = `
+        <input type="hidden" name="quantityArr" value='${quantityArr}'>
+        <input type="hidden" name="productIdArr" value='${productIdArr}'>
+        <input type="hidden" name="orderNo" value='${orderNo}'>
       `;
       document.querySelector("#checkoutProductContainer").innerHTML = html;
+      document.querySelector("#formHiddenContainer").innerHTML = hiddenHTML;
     });
 
 
